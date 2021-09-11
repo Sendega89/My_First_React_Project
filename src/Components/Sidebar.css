@@ -1,0 +1,15 @@
+.sidebar {
+    grid-area: nav;
+    background-color: lightpink;
+
+}
+.settings {
+    margin-top: 100px;
+}
+.menuItems {
+    margin-left: 15px;
+    margin-top: 15px;
+    font-size: 20px;
+    padding-top: 10px;
+}
+ex

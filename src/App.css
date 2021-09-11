@@ -9,35 +9,10 @@
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
 }
-.header img {
-    height: 100%;
-}
-.header {
-    grid-area: header;
-    background-color:lightcoral;
-}
 
-.sidebar {
-    grid-area: nav;
-    background-color: lightpink;
 
-}
 
-.Profile {
-    grid-area: content;
-    background-color: beige;
 
-}
-.fonImage img  {
-    width: 100%;
-}
-.settings {
-    margin-top: 100px;
-}
-.menuItems {
-    margin-left: 15px;
-    margin-top: 15px;
-    font-size: 20px;
-    padding-top: 10px;
-}
+
+
 

@@ -1,0 +1,8 @@
+.Profile {
+    grid-area: content;
+    background-color: beige;
+
+}
+.fonImage img  {
+    width: 100%;
+}
