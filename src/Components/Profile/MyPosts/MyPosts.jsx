@@ -4,10 +4,16 @@ import Post from "./Post/Post";
 
 function MyPosts() {
     return (
-        <div>My posts
-            <div>New Post</div>
-            <Post/>
-            <Post/>
+        <div>
+            My posts
+            <div>
+                <textarea></textarea>
+                <button>Add post</button>
+            </div>
+            <div className={s.posts}>
+                <Post value='Hi,how are you? '/>
+                <Post value='It is my first post'/>
+            </div>
 
 
         </div>
