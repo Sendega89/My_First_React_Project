@@ -1,7 +1,8 @@
 .header img {
     height: 100%;
 }
+
 .header {
     grid-area: header;
-    background-color:lightcoral;
+    background-color: lightcoral;
 }

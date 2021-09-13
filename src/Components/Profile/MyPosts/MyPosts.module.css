@@ -3,6 +3,10 @@
     background-color: beige;
 
 }
-.fonImage img  {
+
+.fonImage img {
     width: 100%;
+}
+.item {
+    color: blue;
 }
