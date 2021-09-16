@@ -11,11 +11,10 @@ function MyPosts() {
                 <button>Add post</button>
             </div>
             <div className={s.posts}>
-                <Post value='Hi,how are you? '/>
-                <Post value='It is my first post'/>
+                <Post value='Hi,how are you?' likesCount='0'/>
+                <Post value='It is my first post' likesCount='22'/>
+
             </div>
-
-
         </div>
     )
 }

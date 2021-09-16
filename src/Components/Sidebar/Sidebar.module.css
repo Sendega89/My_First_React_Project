@@ -6,6 +6,7 @@
 
 .settings {
     margin-top: 100px;
+    margin-bottom: 20px;
 }
 
 .menuItems {
@@ -16,7 +17,12 @@
 
 
 }
-.item {
+
+.item a {
+text-decoration: none;
     color: white;
 
+}
+.item a.activeLink {
+    color: gold;
 }
