@@ -2,34 +2,38 @@ import React from "react";
 import s from "./Message.module.css";
 import {NavLink} from "react-router-dom";
 
-function Message() {
+function MessageItem(props) {
+    let path = "/Message/dialogs/"
+    return (
+        <div className={s.dialog}>
+            <NavLink to={path + props.id}>{props.name} </NavLink>
+        </div>
+    )
+}
+
+function MessageContent(props) {
+    return (
+        <div className={s.message}>{props.message}</div>
+    )
+}
+
+function Message(props) {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogs_item}>
-                <div className={s.dialog}>
-                    <NavLink to="/Message/dialogs/1">Andrey </NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/Message/dialogs/2"> Gleb</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/Message/dialogs/3"> Alosha</NavLink>
-                </div>
-                <div className={s.dialog + ' ' + s.active}>
-                    <NavLink to="/Message/dialogs/4"> Misha</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/Message/dialogs/5"> Vitaxa</NavLink>
-                </div>
-
-
+                <MessageItem name="Andrey" id="1"/>
+                <MessageItem name="Aloha" id="2"/>
+                <MessageItem name="Misha" id="3"/>
+                <MessageItem name="Gleb" id="4"/>
+                <MessageItem name="Tima" id="5"/>
             </div>
             <div className={s.messages}>
-                <div className={s.message}>Hi</div>
-                <div className={s.message}>Ho</div>
-                <div className={s.message}>Hy</div>
-                <div className={s.message}>He</div>
-                <div className={s.message}>Ha</div>
+                <MessageContent message="Hi"/>
+                <MessageContent message="He"/>
+                <MessageContent message="Ho"/>
+                <MessageContent message="Hy"/>
+                <MessageContent message="Yo"/>
+
             </div>
         </div>
     )

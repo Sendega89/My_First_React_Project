@@ -4,11 +4,11 @@ import Post from "./Post/Post";
 
 function MyPosts() {
     return (
-        <div>
-            My posts
-            <div>
+        <div className={s.myPost}>
+            <h1>My posts</h1>
+            <div className={s.textArea}>
                 <textarea></textarea>
-                <button>Add post</button>
+                <button className={s.button}>Add post</button>
             </div>
             <div className={s.posts}>
                 <Post value='Hi,how are you?' likesCount='0'/>

@@ -4,12 +4,14 @@
 }
 
 .dialogs_item {
+    text-decoration: none;
     padding: 20px;
 }
 .dialogs_item .active {
-    color: gold;
+    color: #ead562;
 }
 .messages {
+
     padding: 10px;
 }
 
