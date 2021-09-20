@@ -5,11 +5,12 @@ import {NavLink} from "react-router-dom";
 function MessageItem(props) {
     let path = "/Message/dialogs/"
     return (
-        <div className={s.dialog}>
+        <div className={s.dialogs}>
             <NavLink to={path + props.id}>{props.name} </NavLink>
         </div>
     )
 }
+
 
 function MessageContent(props) {
     return (
@@ -17,7 +18,7 @@ function MessageContent(props) {
     )
 }
 
-function Message(props) {
+function Message() {
     let dialogsData = [
         {id: 1, name: 'Andrey'},
         {id: 2, name: 'Aloha'},
@@ -32,21 +33,17 @@ function Message(props) {
         {id: 4, message: 'Hy'},
         {id: 5, message: 'Yo'},
     ]
+
+    let dialogsElements = dialogsData.map(dialog => <MessageItem name={dialog.name} id={dialog.id}/>)
+    let messageElements = messageData.map(message => <Message message={message.message}/>)
     return (
         <div className={s.dialogs}>
             <div className={s.dialogs_item}>
-                <MessageItem name={dialogsData[0].name} id={dialogsData[0].id}/>
-                <MessageItem name={dialogsData[1].name} id={dialogsData[1].id}/>
-                <MessageItem name={dialogsData[2].name} id={dialogsData[2].id}/>
-                <MessageItem name={dialogsData[3].name} id={dialogsData[3].id}/>
-                <MessageItem name={dialogsData[4].name} id={dialogsData[4].id}/>
+                {dialogsElements}
+
             </div>
             <div className={s.messages}>
-                <MessageContent message={messageData[0].message}/>
-                <MessageContent message={messageData[1].message}/>
-                <MessageContent message={messageData[2].message}/>
-                <MessageContent message={messageData[3].message}/>
-                <MessageContent message={messageData[4].message}/>
+
 
             </div>
         </div>
