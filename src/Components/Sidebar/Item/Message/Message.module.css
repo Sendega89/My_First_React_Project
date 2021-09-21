@@ -11,9 +11,7 @@
 .dialogs_item a {
     text-decoration: none;
     color: lightpink;
-}
-.dialogs_item .active {
-    color: #ead562;
+
 }
 .messages {
 margin-top: 20px;

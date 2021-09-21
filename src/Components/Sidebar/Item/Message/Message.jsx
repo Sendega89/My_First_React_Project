@@ -38,7 +38,7 @@ function Message() {
         {id: 5, message: 'Yo'},
     ]
 
-    let dialogsElements = dialogsData.map(dialog => <MessageItem name={dialog.name} id={dialog.id}/>)
+    let dialogsElements = dialogsData.map(dialog => <MessageItem name={dialog.name} id={dialog.id} />)
     let messageElements = messageData.map(mess => <MessageContent message={mess.message} id={mess.id}/>)
     return (
         <div className={s.dialogs}>
