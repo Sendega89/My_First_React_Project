@@ -10,7 +10,7 @@ function Sidebar() {
                     <NavLink to="/Profile" activeClassName={s.activeLink}> Profile</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to="/Message" activeClassName={s.activeLink}>Message</NavLink></div>
+                    <NavLink to="/Dialogs" activeClassName={s.activeLink}>Dialogs</NavLink></div>
                 <div className={s.item}>
                     <NavLink to="/News" activeClassName={s.activeLink}>News</NavLink></div>
                 <div className={s.item}>
