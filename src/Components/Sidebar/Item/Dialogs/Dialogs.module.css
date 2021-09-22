@@ -2,5 +2,9 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
+.dialogs_item {
 
+}
+.messages {
 
+}

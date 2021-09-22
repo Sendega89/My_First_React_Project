@@ -1,6 +1,5 @@
 import React from "react";
 import s from "./Dialogs.module.css";
-import {NavLink} from "react-router-dom";
 import DialogItem from "./DialogItem/DialogItem";
 import MessageContent from "./Message/Message";
 
@@ -12,12 +11,10 @@ function Dialogs() {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogs_item}>
-             <DialogItem/>
-
+                <DialogItem />
             </div>
             <div className={s.messages}>
-
-                <MessageContent/>
+                <MessageContent />
             </div>
         </div>
     )
