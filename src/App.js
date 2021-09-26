@@ -19,8 +19,10 @@ function App(props) {
                 <Header/>
                 <Sidebar/>
                 <div className="content">
-                    <Route path="/Profile" render= { () =><Profile postData={props.postData}/>}/>
-                    <Route path="/Dialogs" render={ () => <Dialogs dialogsData={props.dialogsData} messageData={props.messageData} />}/>
+                    <Route path="/Profile"
+                           render= { () =><Profile postData={props.postData}/>}/>
+                    <Route path="/Dialogs"
+                           render={ () => <Dialogs dialogsData={props.dialogsData} messageData={props.messageData} />}/>
                     <Route path="/Photo"   component={Photo}/>
                     <Route path="/News" component={News}/>
                     <Route path="/Settings" component={Settings}/>
