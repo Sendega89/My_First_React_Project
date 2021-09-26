@@ -1,6 +1,6 @@
 import s from "./DialogItem.module.css"
 import {NavLink} from "react-router-dom";
-import {dialogsData} from "../../../../../index";
+
 
 function MessageItem(props) {
     let path = "/Dialogs/dialogs/"
@@ -10,9 +10,9 @@ function MessageItem(props) {
         </div>
     )
 }
-function DialogItem() {
+function DialogItem(props) {
 
-    let dialogsElements = dialogsData.map(dialog => <MessageItem name={dialog.name} id={dialog.id}/>)
+    let dialogsElements = props.dialogsData.map(dialog => <MessageItem name={dialog.name} id={dialog.id}/>)
 
     return (
         /*<div className={s.dialogs}></div>*/

@@ -1,11 +1,11 @@
 import React from "react";
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
-import {postData} from "../../../index";
 
-function MyPosts() {
 
-    let posts = postData.map(post => <Post message={post.message} likesCount={post.likesCount}/>)
+function MyPosts(props) {
+
+    let posts = props.postData.map(post => <Post message={post.message}  likesCount={post.likesCount}/>)
     return (
         <div className={s.myPost}>
             <h1>My posts</h1>

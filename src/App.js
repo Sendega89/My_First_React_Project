@@ -11,15 +11,16 @@ import Dialogs from "./Components/Sidebar/Item/Dialogs/Dialogs";
 
 
 
-function App() {
+function App(props) {
+
     return (
         <BrowserRouter>
             <div className="grid">
                 <Header/>
                 <Sidebar/>
                 <div className="content">
-                    <Route path="/Profile" component={Profile}/>
-                    <Route path="/Dialogs" component={Dialogs}/>
+                    <Route path="/Profile" render= { () =><Profile postData={props.postData}/>}/>
+                    <Route path="/Dialogs" render={ () => <Dialogs dialogsData={props.dialogsData} messageData={props.messageData} />}/>
                     <Route path="/Photo"   component={Photo}/>
                     <Route path="/News" component={News}/>
                     <Route path="/Settings" component={Settings}/>

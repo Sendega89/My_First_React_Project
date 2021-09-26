@@ -25,14 +25,10 @@ let messageData = [
     {id: 4, message: 'Hy'},
     {id: 5, message: 'Yo'},
 ];
-export {
-    postData,
-    dialogsData,
-    messageData
-}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App postData={postData} messageData={messageData} dialogsData={dialogsData} />
   </React.StrictMode>,
   document.getElementById('root')
 );

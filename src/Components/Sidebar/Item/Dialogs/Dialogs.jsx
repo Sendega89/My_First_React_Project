@@ -6,15 +6,15 @@ import MessageContent from "./Message/Message";
 
 
 
-function Dialogs() {
+function Dialogs(props) {
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogs_item}>
-                <DialogItem />
+                <DialogItem dialogsData={props.dialogsData}/>
             </div>
             <div className={s.messages}>
-                <MessageContent />
+                <MessageContent messageData={props.messageData}/>
             </div>
         </div>
     )
