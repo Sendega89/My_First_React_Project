@@ -25,4 +25,20 @@ text-decoration: none;
 }
 .item a.activeLink {
     color: gold;
+
+}
+.friends {
+    color: blue;
+    margin-left: 10px;
+    font-family: AngryBirds;
+
+}
+.friends_item {
+    color: red;
+    text-align: justify;
+
+    margin-left: -10px;
+}
+.friends_item span {
+padding: 5px;
 }

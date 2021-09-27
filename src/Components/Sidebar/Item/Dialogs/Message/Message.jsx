@@ -5,7 +5,7 @@ import s from "./Message.module.css"
 function MessageContent(props) {
     return (
         <div className={s.message}>
-            {props.id}
+
             {props.message}
         </div>)
 }

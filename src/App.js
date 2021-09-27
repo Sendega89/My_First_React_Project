@@ -8,6 +8,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Photo from "./Components/Sidebar/Item/Photo/Photo";
 import News from "./Components/Sidebar/Item/News/News";
 import Dialogs from "./Components/Sidebar/Item/Dialogs/Dialogs";
+import state from "./Redux/state";
 
 
 
@@ -20,9 +21,10 @@ function App(props) {
                 <Sidebar/>
                 <div className="content">
                     <Route path="/Profile"
-                           render= { () =><Profile postData={props.postData}/>}/>
+                           render= { () =><Profile postData={props.state.profilePage.postData}/>}/>
                     <Route path="/Dialogs"
-                           render={ () => <Dialogs dialogsData={props.dialogsData} messageData={props.messageData} />}/>
+                           render={ () => <Dialogs dialogsData={props.state.dialogsPage.dialogsData}
+                                                   messageData={props.state.dialogsPage.messageData} />}/>
                     <Route path="/Photo"   component={Photo}/>
                     <Route path="/News" component={News}/>
                     <Route path="/Settings" component={Settings}/>

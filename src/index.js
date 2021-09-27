@@ -9,9 +9,7 @@ import state from './Redux/state';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App postData={state.profilePage.postData}
-         messageData={state.dialogsPage.messageData}
-         dialogsData={state.dialogsPage.dialogsData} />
+    <App state={state} />
   </React.StrictMode>,
   document.getElementById('root')
 );

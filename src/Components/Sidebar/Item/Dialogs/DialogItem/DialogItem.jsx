@@ -6,18 +6,28 @@ function MessageItem(props) {
     let path = "/Dialogs/dialogs/"
     return (
         <div className={s.dialogs}>
-            <NavLink to={path + props.id}>{props.name} </NavLink>
+            <span className={s.avatar}>
+                    <img src={props.avatar} alt='user_avatar'/>
+                </span>
+            <NavLink to={path + props.id}>
+                {props.name}
+
+            </NavLink>
+
         </div>
     )
 }
+
 function DialogItem(props) {
 
-    let dialogsElements = props.dialogsData.map(dialog => <MessageItem name={dialog.name} id={dialog.id}/>)
+    let dialogsElements = props.dialogsData.map(dialog => <MessageItem name={dialog.name} id={dialog.id}
+                                                                       avatar={dialog.avatar}/>)
 
     return (
-        /*<div className={s.dialogs}></div>*/
+
         <div className={s.dialogs_item}>
             {dialogsElements}
+
         </div>
 
 
