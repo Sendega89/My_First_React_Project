@@ -20,7 +20,7 @@ let state = {
             {id: 2, message: 'Ho'},
             {id: 3, message: 'He'},
             {id: 4, message: 'Hy'},
-            {id: 5, message: 'Yo'},
+            
         ]
     }
 }

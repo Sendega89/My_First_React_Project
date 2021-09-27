@@ -39,6 +39,9 @@ text-decoration: none;
 
     margin-left: -10px;
 }
-.friends_item span {
+.friends_item_name span {
 padding: 5px;
+}
+.friends_item_img span {
+    background-color: antiquewhite;
 }

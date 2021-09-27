@@ -19,10 +19,15 @@ function Sidebar() {
                     <NavLink to="/Settings" activeClassName={s.activeLink}> Settings</NavLink></div>
                 <div className={`${s.item} ${s.friends}`}>
                 <h2>Friends</h2>
-                    <div className={s.friends_item}>
+                    <div className={s.friends_item_name}>
                         <span>Tima</span>
                         <span>Gleb</span>
                         <span>Andrey</span>
+                    </div>
+                    <div className={s.friends_item_img}>
+                        <span><img/></span>
+                        <span><img/></span>
+                        <span><img/></span>
                     </div>
                 </div>
             </div>

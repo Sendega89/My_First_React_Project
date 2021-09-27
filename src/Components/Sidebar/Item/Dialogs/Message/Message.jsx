@@ -15,6 +15,9 @@ function Message(props) {
     return (
         <div className={s.messages}>
             {messageElements}
+
+
+        <textarea></textarea>
         </div>
     )
 }
