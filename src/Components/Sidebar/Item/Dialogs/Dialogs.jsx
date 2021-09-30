@@ -14,7 +14,8 @@ function Dialogs(props) {
                 <DialogItem dialogsData={props.dialogsData}/>
             </div>
             <div className={s.messages}>
-                <MessageContent messageData={props.messageData}/>
+                <MessageContent messageData={props.messageData}
+                                addMessage={props.addMessage}/>
             </div>
         </div>
     )

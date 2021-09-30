@@ -8,6 +8,8 @@ import Photo from "./Components/Sidebar/Item/Photo/Photo";
 import News from "./Components/Sidebar/Item/News/News";
 import Dialogs from "./Components/Sidebar/Item/Dialogs/Dialogs";
 import {Route} from "react-router-dom";
+import {updateNewPostText} from "./Redux/state";
+
 
 
 
@@ -22,10 +24,12 @@ function App(props) {
                 <div className="content">
                     <Route path="/Profile"
                            render= { () =><Profile postData={props.state.profilePage.postData}
-                                                    addPost={props.addPost}/>}/>
+                                                    addPost={props.addPost}
+                                                   newPostText={props.state.profilePage.newPostText}
+                                                   updateNewPostText={props.updateNewPostText}/>}/>
                     <Route path="/Dialogs"
                            render={ () => <Dialogs dialogsData={props.state.dialogsPage.dialogsData}
-                                                   messageData={props.state.dialogsPage.messageData} />}/>
+                                                   messageData={props.state.dialogsPage.messageData}/>}/>
                     <Route path="/Photo"   component={Photo}/>
                     <Route path="/News" component={News}/>
                     <Route path="/Settings" component={Settings}/>
