@@ -25,9 +25,10 @@ let state = {
             
         ]
     }
+
 }
-export let addPost= (postMessage)=> {
-    let newPost ={
+export let addPost = (postMessage) => {
+    let newPost = {
         id: 5,
         message:postMessage,
         likesCount:'1'
@@ -35,5 +36,4 @@ export let addPost= (postMessage)=> {
 state.profilePage.postData.push(newPost);
     rerenderEntireTree(state);
 }
-
 export default state

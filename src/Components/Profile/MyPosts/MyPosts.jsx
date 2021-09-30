@@ -8,9 +8,10 @@ function MyPosts(props) {
     let addPost = () => {
         let text = newPostElement.current.value;
         props.addPost(text);
-        newPostElement.current.value = '';
-    }
-    let posts = props.postData.map(post => <Post message={post.message} likesCount={post.likesCount}/>)
+        newPostElement.current.value='';
+
+}
+    let posts = props.postData.map(post => <Post message={post.message}  likesCount={post.likesCount}/>)
     return (
         <div className={s.myPost}>
             <h1>My posts</h1>
