@@ -14,7 +14,8 @@ function Profile(props) {
                     alt='TopImage'/>
             </div>
             <ProfileInfo />
-            <MyPosts postData={props.postData}/>
+            <MyPosts postData={props.postData}
+                     addPost={props.addPost}/>
         </div>
     )
 }

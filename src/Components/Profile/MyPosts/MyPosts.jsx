@@ -7,10 +7,10 @@ function MyPosts(props) {
     let newPostElement = React.createRef();
     let addPost = () => {
         let text = newPostElement.current.value;
-        alert(text)
-
-}
-    let posts = props.postData.map(post => <Post message={post.message}  likesCount={post.likesCount}/>)
+        props.addPost(text);
+        newPostElement.current.value = '';
+    }
+    let posts = props.postData.map(post => <Post message={post.message} likesCount={post.likesCount}/>)
     return (
         <div className={s.myPost}>
             <h1>My posts</h1>
