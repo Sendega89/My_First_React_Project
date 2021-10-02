@@ -6,16 +6,26 @@ import MessageContent from "./Message/Message";
 
 
 
+
+
+
+
+
+
 function Dialogs(props) {
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogs_item}>
-                <DialogItem dialogsData={props.dialogsData}/>
+                <DialogItem dialogsData={props.dialogsData}
+                            />
             </div>
             <div className={s.messages}>
                 <MessageContent messageData={props.messageData}
-                                addMessage={props.addMessage}/>
+                                newMessageText={props.newMessageText}
+                                updateMessageText={props.updateMessageText}
+                                addMessage={props.addMessage}
+                               />
             </div>
         </div>
     )
