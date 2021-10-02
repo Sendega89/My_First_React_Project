@@ -7,26 +7,20 @@ function MessageContent(props) {
         <div className={s.message}>
             {props.message}
         </div>)
-
-
 }
 
 function Message(props) {
 
-
     let newMessageElement = React.createRef();
 
     let addNewMessage = () => {
-        let messageText = newMessageElement.current.value;
-     props.addMessage(messageText);
-
-        newMessageElement.current.value = "";
+        props.addMessage();
     }
     let onMessageChange = () => {
         let messageText = newMessageElement.current.value;
         props.updateMessageText(messageText);
     }
-    let messageElements = props.messageData.map(mess => <MessageContent message={mess.message} id={mess.id} />)
+    let messageElements = props.messageData.map(mess => <MessageContent message={mess.message} id={mess.id}/>)
     return (
         <div>
             <div className={s.messages}>
