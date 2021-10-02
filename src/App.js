@@ -10,39 +10,33 @@ import Dialogs from "./Components/Sidebar/Item/Dialogs/Dialogs";
 import {Route} from "react-router-dom";
 
 
-
-
-
-
-
-
 function App(props) {
 
     return (
 
-            <div className="grid">
-                <Header/>
-                <Sidebar/>
-                <div className="content">
-                    <Route path="/Profile"
-                           render= { () =><Profile postData={props.state.profilePage.postData}
-                                                    addPost={props.addPost}
-                                                   newPostText={props.state.profilePage.newPostText}
-                                                   updateNewPostText={props.updateNewPostText}/>}/>
-                    <Route path="/Dialogs"
-                           render={ () => <Dialogs dialogsData={props.state.dialogsPage.dialogsData}
-                                                   messageData={props.state.dialogsPage.messageData}
-                                                   newMessageText={props.state.dialogsPage.newMessageText}
-                                                   addMessage={props.addMessage}
-                                                   updateMessageText={props.updateMessageText}/>}/>
+        <div className="grid">
+            <Header/>
+            <Sidebar/>
+            <div className="content">
+                <Route path="/Profile"
+                       render={() => <Profile postData={props.state.profilePage.postData}
+                                              addPost={props.addPost}
+                                              newPostText={props.state.profilePage.newPostText}
+                                              updateNewPostText={props.updateNewPostText}/>}/>
+                <Route path="/Dialogs"
+                       render={() => <Dialogs dialogsData={props.state.dialogsPage.dialogsData}
+                                              messageData={props.state.dialogsPage.messageData}
+                                              newMessageText={props.state.dialogsPage.newMessageText}
+                                              addMessage={props.addMessage}
+                                              updateMessageText={props.updateMessageText}/>}/>
 
-                    <Route path="/Photo"   component={Photo}/>
-                    <Route path="/News" component={News}/>
-                    <Route path="/Settings" component={Settings}/>
-
-                </div>
+                <Route path="/Photo" component={Photo}/>
+                <Route path="/News" component={News}/>
+                <Route path="/Settings" component={Settings}/>
 
             </div>
+
+        </div>
 
     )
 }
