@@ -20,9 +20,9 @@ function App(props) {
             <div className="content">
                 <Route path="/Profile"
                        render={() => <Profile postData={props.state.profilePage.postData}
-                                              addPost={props.addPost}
                                               newPostText={props.state.profilePage.newPostText}
-                                              updateNewPostText={props.updateNewPostText}/>}/>
+                                              dispatch={props.dispatch}
+                                              />}/>
                 <Route path="/Dialogs"
                        render={() => <Dialogs dialogsData={props.state.dialogsPage.dialogsData}
                                               messageData={props.state.dialogsPage.messageData}

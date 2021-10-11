@@ -60,20 +60,7 @@ let store = {
     },
 
 
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likesCount: '1'
-        };
-        this._state.profilePage.postData.push(newPost);
-        this._state.profilePage.newPostText = "";
-        this._subscriber(this._state);
-    },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._subscriber(this._state);
-    },
+
     addMessage() {
         let newMessage = {
             id: 5,
@@ -88,6 +75,21 @@ let store = {
         this._subscriber(this._state);
     },
 
+    dispatch(action) {
+      if (action.type === 'ADD-POST') {
+          let newPost = {
+              id: 5,
+              message: this._state.profilePage.newPostText,
+              likesCount: '1'
+          };
+          this._state.profilePage.postData.push(newPost);
+          this._state.profilePage.newPostText = '';
+          this._subscriber(this._state);
+      } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+          this._state.profilePage.newPostText = action.newText;
+          this._subscriber(this._state);
+      }
+    }
 }
 
 export default store
