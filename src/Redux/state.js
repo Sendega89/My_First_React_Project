@@ -52,6 +52,14 @@ let store = {
         console.log('state')
     },
 
+    subscribe(observer) {
+        this._subscriber = observer;
+    },
+    getState() {
+        return this._state;
+    },
+
+
     addPost() {
         let newPost = {
             id: 5,
@@ -79,11 +87,7 @@ let store = {
         this._state.dialogsPage.newMessageText = newMessage;
         this._subscriber(this._state);
     },
-    subscribe(observer) {
-        this._subscriber = observer;
-    },
-    getState() {
-        return this._state;
-    },
+
 }
+
 export default store
