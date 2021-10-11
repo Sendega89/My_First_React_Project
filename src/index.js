@@ -1,4 +1,3 @@
-
 import reportWebVitals from './reportWebVitals';
 import store from './Redux/state';
 import ReactDOM from "react-dom";
@@ -8,14 +7,14 @@ import App from "./App";
 import {BrowserRouter} from "react-router-dom";
 
 
-let rerenderEntireTree = (state)=> {
+let rerenderEntireTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
                 <App state={state}
                      dispatch={store.dispatch.bind(store)}
                      addMessage={store.addMessage.bind(store)}
-                     updateMessageText={store.updateMessageText.bind(store) }
+                     updateMessageText={store.updateMessageText.bind(store)}
                 />
             </BrowserRouter>
         </React.StrictMode>,
