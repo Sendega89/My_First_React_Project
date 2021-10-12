@@ -14,10 +14,10 @@ function Profile(props) {
                     alt='TopImage'/>
             </div>
             <ProfileInfo />
-            <MyPosts postData={props.postData}
-                      addPost={props.addPost}
+            <MyPosts dispatch = {props.dispatch}
+                     postData={props.postData}
                      newPostText={props.newPostText}
-                     updateNewPostText={props.updateNewPostText}/>
+                     />
         </div>
     )
 }

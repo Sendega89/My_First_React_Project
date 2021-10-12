@@ -1,5 +1,8 @@
-let store = {
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
+
+let store = {
     _state: {
         profilePage: {
             postData: [
@@ -15,7 +18,7 @@ let store = {
                 {
                     id: 1,
                     name: 'Andrey',
-                    avatar: 'https://images.cdn.yle.fi/image/upload/f_auto,fl_lossy,q_auto,dpr_3,w_320,c_fill,ar_16:9,d_yle-areena.jpg/v1613894129/13-1-3043963-1613738251952.jpg'
+                    avatar: 'https://lh3.googleusercontent.com/proxy/AI9Rjtl8QFTw5Vkdp4kA4-twu15Y8PffJR0svsjpO20eUG7ozEaKdL6uPao4gB6cxykfbT-H3fLqP6-0xLXPeLVdW7U1lTRHSbvttosBcBeVFqjx9RC68v7rEA'
                 },
                 {
                     id: 2,
@@ -27,11 +30,7 @@ let store = {
                     name: 'Misha',
                     avatar: 'https://thumbs.dreamstime.com/b/oboe-%D0%BD%D0%B0-%D0%B1%D0%B5-%D0%BE%D0%B9-%D0%BF%D1%80%D0%B5-%D0%BF%D0%BE%D1%81%D1%8B-%D0%BA%D0%B5-37634543.jpg'
                 },
-                {
-                    id: 4,
-                    name: 'Gleb',
-                    avatar: 'https://jam.ua/files/images/items/TB450M-(S)-main-jmichael.jpg'
-                },
+                {id: 4, name: 'Gleb', avatar: 'https://jam.ua/files/images/items/TB450M-(S)-main-jmichael.jpg'},
                 {
                     id: 5,
                     name: 'Tima',
@@ -42,48 +41,41 @@ let store = {
                 {id: 1, message: 'Hi'},
                 {id: 2, message: 'Ho'},
                 {id: 3, message: 'He'},
-                {id: 4, message: 'Hy'},
-
+                {id: 4, message: 'Hy'}
             ],
-            newMessageText: ' '
-        },
+            newMessageText: ' ',
+        }
     },
-    _subscriber() {
+    _callSubscriber() {
         console.log('state')
     },
-
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likesCount: '1'
-        };
-        this._state.profilePage.postData.push(newPost);
-        this._state.profilePage.newPostText = "";
-        this._subscriber(this._state);
-    },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._subscriber(this._state);
-    },
-    addMessage() {
-        let newMessage = {
-            id: 5,
-            message: this._state.dialogsPage.newMessageText
-        }
-        this._state.dialogsPage.messageData.push(newMessage);
-        this._state.dialogsPage.newMessageText = "";
-        this._subscriber(this._state);
-    },
-    updateMessageText(newMessage) {
-        this._state.dialogsPage.newMessageText = newMessage;
-        this._subscriber(this._state);
-    },
     subscribe(observer) {
-        this._subscriber = observer;
+        this._callSubscriber = observer;
     },
     getState() {
-        return this._state;
+        return this._state
     },
+    dispatch(action){
+        if (action.type === ADD_POST) {
+            let newPost = {
+                id: 5,
+                message:  this._state.profilePage.newPostText,
+                likesCount: '1'
+            };
+            this._state.profilePage.postData.push(newPost);
+            this._state.profilePage.newPostText = "";
+            this._callSubscriber( this._state);
+        } else if (action.type === UPDATE_NEW_POST_TEXT){
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber( this._state);
+        }
+    }
 }
+export const addPostActionCreator = () => {
+    return {type: 'ADD-POST'}
+}
+export const updateNewPostTextActionCreator = (text) => {
+    return {type: 'UPDATE-NEW-POST-TEXT', newText: text}
+}
+
 export default store

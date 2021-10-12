@@ -20,15 +20,12 @@ function App(props) {
             <div className="content">
                 <Route path="/Profile"
                        render={() => <Profile postData={props.state.profilePage.postData}
-                                              addPost={props.addPost}
+                                              dispatch = {props.dispatch}
                                               newPostText={props.state.profilePage.newPostText}
-                                              updateNewPostText={props.updateNewPostText}/>}/>
+                                              />}/>
                 <Route path="/Dialogs"
                        render={() => <Dialogs dialogsData={props.state.dialogsPage.dialogsData}
-                                              messageData={props.state.dialogsPage.messageData}
-                                              newMessageText={props.state.dialogsPage.newMessageText}
-                                              addMessage={props.addMessage}
-                                              updateMessageText={props.updateMessageText}/>}/>
+                                              messageData={props.state.dialogsPage.messageData}/>}/>
 
                 <Route path="/Photo" component={Photo}/>
                 <Route path="/News" component={News}/>
