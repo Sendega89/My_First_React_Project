@@ -7,7 +7,8 @@ import Settings from "./Components/Sidebar/Item/Settings/Settings";
 import Photo from "./Components/Sidebar/Item/Photo/Photo";
 import News from "./Components/Sidebar/Item/News/News";
 import Dialogs from "./Components/Sidebar/Item/Dialogs/Dialogs";
-import {Route} from "react-router-dom";
+import {Route, BrowserRouter} from "react-router-dom";
+
 
 
 function App(props) {
@@ -25,7 +26,9 @@ function App(props) {
                                               />}/>
                 <Route path="/Dialogs"
                        render={() => <Dialogs dialogsData={props.state.dialogsPage.dialogsData}
-                                              messageData={props.state.dialogsPage.messageData}/>}/>
+                                              messageData={props.state.dialogsPage.messageData}
+                                              store = {props.store}
+                                               />}/>
 
                 <Route path="/Photo" component={Photo}/>
                 <Route path="/News" component={News}/>

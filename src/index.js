@@ -1,6 +1,6 @@
 
 import reportWebVitals from './reportWebVitals';
-import store from './Redux/state';
+import store from './redux/state';
 import ReactDOM from "react-dom";
 import React from "react";
 import './index.css';
@@ -14,6 +14,7 @@ let rerenderEntireTree = (state)=> {
             <BrowserRouter>
                 <App state={ store.getState()}
                      dispatch ={store.dispatch.bind(store)}
+                     store = {store}
                 />
             </BrowserRouter>
         </React.StrictMode>,

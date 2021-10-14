@@ -1,5 +1,9 @@
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+
 
 
 let store = {
@@ -18,7 +22,7 @@ let store = {
                 {
                     id: 1,
                     name: 'Andrey',
-                    avatar: 'https://lh3.googleusercontent.com/proxy/AI9Rjtl8QFTw5Vkdp4kA4-twu15Y8PffJR0svsjpO20eUG7ozEaKdL6uPao4gB6cxykfbT-H3fLqP6-0xLXPeLVdW7U1lTRHSbvttosBcBeVFqjx9RC68v7rEA'
+                    avatar: 'https://images.cdn.yle.fi/image/upload/f_auto,fl_lossy,q_auto,dpr_3,w_320,c_fill,ar_16:9,d_yle-areena.jpg/v1613894129/13-1-3043963-1613738251952.jpg'
                 },
                 {
                     id: 2,
@@ -43,11 +47,11 @@ let store = {
                 {id: 3, message: 'He'},
                 {id: 4, message: 'Hy'}
             ],
-            newMessageText: ' ',
+            newMessageBody: ""
         }
     },
     _callSubscriber() {
-        console.log('state')
+        console.log('State changed')
     },
     subscribe(observer) {
         this._callSubscriber = observer;
@@ -63,19 +67,39 @@ let store = {
                 likesCount: '1'
             };
             this._state.profilePage.postData.push(newPost);
-            this._state.profilePage.newPostText = "";
+            this._state.profilePage.newPostText = '';
             this._callSubscriber( this._state);
         } else if (action.type === UPDATE_NEW_POST_TEXT){
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber( this._state);
+        } else {
+            if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+                this._state.dialogsPage.newMessageBody = action.body;
+                this._callSubscriber( this._state);
+            } else if (action.type === SEND_MESSAGE) {
+                let body = this._state.dialogsPage.newMessageBody;
+                this._state.dialogsPage.newMessageBody = '';
+                this._state.dialogsPage.messageData.push({id: 5, message: body});
+                this._callSubscriber(this._state);
+            }
+
+                }
         }
-    }
 }
-export const addPostActionCreator = () => {
-    return {type: 'ADD-POST'}
-}
+export const addPostActionCreator = () => ({type: 'ADD-POST'})
+
+
 export const updateNewPostTextActionCreator = (text) => {
-    return {type: 'UPDATE-NEW-POST-TEXT', newText: text}
+    return {type: UPDATE_NEW_POST_TEXT, newText: text}
 }
 
+
+export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
+
+
+export const updateNewMessageBodyCreator = (body) =>
+    ( {type: UPDATE_NEW_MESSAGE_BODY, body: body})
+
+
 export default store
+window.store = store;
