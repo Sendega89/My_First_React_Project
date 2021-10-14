@@ -7,7 +7,7 @@ import Settings from "./Components/Sidebar/Item/Settings/Settings";
 import Photo from "./Components/Sidebar/Item/Photo/Photo";
 import News from "./Components/Sidebar/Item/News/News";
 import Dialogs from "./Components/Sidebar/Item/Dialogs/Dialogs";
-import {Route, BrowserRouter} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 
 

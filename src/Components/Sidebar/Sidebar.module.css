@@ -1,7 +1,6 @@
 .sidebar {
     grid-area: nav;
     background-color: lightpink;
-
 }
 
 .settings {
@@ -14,34 +13,35 @@
     margin-top: 15px;
     font-size: 20px;
     padding-top: 10px;
-
-
 }
 
 .item a {
-text-decoration: none;
+    text-decoration: none;
     color: white;
 
 }
+
 .item a.activeLink {
     color: gold;
 
 }
+
 .friends {
     color: blue;
     margin-left: 10px;
-    font-family: AngryBirds;
-
+    font-family: AngryBirds, sans-serif;
 }
+
 .friends_item {
     color: red;
     text-align: justify;
-
     margin-left: -10px;
 }
+
 .friends_item_name span {
-padding: 5px;
+    padding: 5px;
 }
+
 .friends_item_img span {
     background-color: antiquewhite;
 }
