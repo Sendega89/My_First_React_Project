@@ -12,7 +12,7 @@ import {Route} from "react-router-dom";
 
 
 function App(props) {
-
+debugger
     return (
 
         <div className="grid">

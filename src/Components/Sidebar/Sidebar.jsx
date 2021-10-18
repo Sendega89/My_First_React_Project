@@ -25,9 +25,7 @@ function Sidebar() {
                         <span>Andrey</span>
                     </div>
                     <div className={s.friends_item_img}>
-                        <span><img/></span>
-                        <span><img/></span>
-                        <span><img/></span>
+
                     </div>
                 </div>
             </div>
