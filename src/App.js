@@ -6,13 +6,12 @@ import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Sidebar/Item/Settings/Settings";
 import Photo from "./Components/Sidebar/Item/Photo/Photo";
 import News from "./Components/Sidebar/Item/News/News";
-import Dialogs from "./Components/Sidebar/Item/Dialogs/Dialogs";
 import {Route} from "react-router-dom";
-
+import DialogsContainer from "./Components/Sidebar/Item/Dialogs/DialogsContainer";
 
 
 function App(props) {
-debugger
+    debugger
     return (
 
         <div className="grid">
@@ -20,16 +19,11 @@ debugger
             <Sidebar/>
             <div className="content">
                 <Route path="/Profile"
-                       render={() => <Profile postData={props.state.profilePage.postData}
-                                              dispatch = {props.dispatch}
-                                              newPostText={props.state.profilePage.newPostText}
-                                              />}/>
+                       render={() => <Profile store={props.store}
+                       />}/>
                 <Route path="/Dialogs"
-                       render={() => <Dialogs dialogsData={props.state.dialogsPage.dialogsData}
-                                              messageData={props.state.dialogsPage.messageData}
-                                              store = {props.store}
-                                               />}/>
-
+                       render={() => <DialogsContainer store={props.store}
+                       />}/>
                 <Route path="/Photo" component={Photo}/>
                 <Route path="/News" component={News}/>
                 <Route path="/Settings" component={Settings}/>

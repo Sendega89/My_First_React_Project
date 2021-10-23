@@ -19,7 +19,9 @@ let initialState ={
                     name: 'Misha',
                     avatar: 'https://thumbs.dreamstime.com/b/oboe-%D0%BD%D0%B0-%D0%B1%D0%B5-%D0%BE%D0%B9-%D0%BF%D1%80%D0%B5-%D0%BF%D0%BE%D1%81%D1%8B-%D0%BA%D0%B5-37634543.jpg'
                 },
-                {id: 4, name: 'Gleb', avatar: 'https://jam.ua/files/images/items/TB450M-(S)-main-jmichael.jpg'},
+                {   id: 4,
+                    name: 'Gleb',
+                    avatar: 'https://jam.ua/files/images/items/TB450M-(S)-main-jmichael.jpg'},
                 {
                     id: 5,
                     name: 'Tima',
