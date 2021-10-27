@@ -10,8 +10,9 @@ import {Route} from "react-router-dom";
 import DialogsContainer from "./Components/Sidebar/Item/Dialogs/DialogsContainer";
 
 
+
 function App(props) {
-    debugger
+
     return (
 
         <div className="grid">
@@ -19,10 +20,10 @@ function App(props) {
             <Sidebar/>
             <div className="content">
                 <Route path="/Profile"
-                       render={() => <Profile store={props.store}
+                       render={() => <Profile
                        />}/>
                 <Route path="/Dialogs"
-                       render={() => <DialogsContainer store={props.store}
+                       render={() => <DialogsContainer
                        />}/>
                 <Route path="/Photo" component={Photo}/>
                 <Route path="/News" component={News}/>

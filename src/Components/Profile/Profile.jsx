@@ -14,7 +14,7 @@ function Profile(props) {
                     alt='TopImage'/>
             </div>
             <ProfileInfo />
-            <MyPostsContainer store={props.store}/>
+            <MyPostsContainer />
         </div>
     )
 }
