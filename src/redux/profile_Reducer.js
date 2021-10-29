@@ -12,6 +12,8 @@ let initialState = {
             newPostText: 'Enter text here'
 }
 const profile_Reducer = (state = initialState, action) => {
+    let stateCopy = {...state};
+
     switch (action.type) {
         case ADD_POST: {
             let newPost = {
@@ -19,15 +21,12 @@ const profile_Reducer = (state = initialState, action) => {
                 message: state.newPostText,
                 likesCount: '1'
             };
-            let stateCopy = {...state};
             stateCopy.postData = [...state.postData];
             stateCopy.postData.push(newPost);
             stateCopy.newPostText = '';
             return stateCopy;
         }
         case UPDATE_NEW_POST_TEXT:{
-
-            let stateCopy = {...state};
             stateCopy.postData = [...state.postData]
             stateCopy.newPostText = action.newText;
             return stateCopy;
