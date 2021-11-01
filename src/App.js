@@ -8,10 +8,12 @@ import Photo from "./Components/Sidebar/Item/Photo/Photo";
 import News from "./Components/Sidebar/Item/News/News";
 import {Route} from "react-router-dom";
 import DialogsContainer from "./Components/Sidebar/Item/Dialogs/DialogsContainer";
+import UsersContainer from "./Components/Sidebar/Item/Users/UsersContainer";
 
 
 
-function App(props) {
+
+function App() {
 
     return (
 
@@ -20,11 +22,11 @@ function App(props) {
             <Sidebar/>
             <div className="content">
                 <Route path="/Profile"
-                       render={() => <Profile
-                       />}/>
+                       render={() => <Profile/>}/>
                 <Route path="/Dialogs"
-                       render={() => <DialogsContainer
-                       />}/>
+                       render={() => <DialogsContainer/>}/>
+                <Route path="/Users"
+                       render={() => <UsersContainer/>}/>
                 <Route path="/Photo" component={Photo}/>
                 <Route path="/News" component={News}/>
                 <Route path="/Settings" component={Settings}/>

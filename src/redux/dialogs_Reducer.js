@@ -7,7 +7,7 @@ let initialState = {
         {
             id: 1,
             name: 'Andrey',
-            avatar: 'https://lh6.googleusercontent.com/kVBQN_T5WTmh5GY5azY5hYLhUCQlCditgN1WtnkhcKan8jxMPbXxcqoQ5vgngN1KwBD7EPKN_QX2Q2gAmaTASDVkcKOqmIRuNOLSxAnv3bse0ecUi6b3GjuPIF_vuBiP8Q=w1280'
+            avatar: 'https://images.cdn.yle.fi/image/upload/f_auto,fl_progressive/q_88/w_2944,h_1655,c_crop,x_0,y_18/w_1200/v1448279046/17-394495652fbc780a68.jpg'
         },
         {
             id: 2,
