@@ -35,6 +35,7 @@ class UsersContainer extends React.Component {
                       users={this.props.users}
                       unfollow={this.props.unfollow}
                       follow={this.props.follow}
+                      isFetching={this.props.isFetching}
         />
     }
 }
@@ -45,7 +46,8 @@ let mapStateToProps = (state) => {
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage
+        currentPage: state.usersPage.currentPage,
+        isFetching: state.usersPage.isFetching
     }
 };
 let mapDispatchToProps=(dispatch) => {

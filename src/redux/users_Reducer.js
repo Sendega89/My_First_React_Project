@@ -10,10 +10,10 @@ let initialState = {
     users: [ ],
     pageSize: 100,
     totalUsersCount: 10,
-    currentPage:1
+    currentPage:1,
+    isFetching:false
 };
 const users_Reducer = (state = initialState, action) => {
-
 
     switch (action.type) {
         case FOLLOW:
