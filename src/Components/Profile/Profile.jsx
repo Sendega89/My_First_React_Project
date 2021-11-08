@@ -13,7 +13,7 @@ function Profile(props) {
                     src='https://st3.depositphotos.com/1194063/18197/i/600/depositphotos_181977680-stock-photo-two-red-hearts-on-rustic.jpg'
                     alt='TopImage'/>
             </div>
-            <ProfileInfo />
+            <ProfileInfo profile={props.profile} />
             <MyPostsContainer />
         </div>
     )

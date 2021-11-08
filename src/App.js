@@ -2,13 +2,13 @@ import React from "react";
 import './App.css';
 import Header from "./Components/Header/Header";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Sidebar/Item/Settings/Settings";
 import Photo from "./Components/Sidebar/Item/Photo/Photo";
 import News from "./Components/Sidebar/Item/News/News";
 import {Route} from "react-router-dom";
 import DialogsContainer from "./Components/Sidebar/Item/Dialogs/DialogsContainer";
 import UsersContainer from "./Components/Sidebar/Item/Users/UsersContainer";
+import ProfileContainer from "./Components/Profile/ProfileContainer";
 
 
 
@@ -23,7 +23,7 @@ function App() {
             <Sidebar/>
             <div className="content">
                 <Route path="/Profile"
-                       render={() => <Profile/>}/>
+                       render={() => <ProfileContainer />}/>
                 <Route path="/Dialogs"
                        render={() => <DialogsContainer/>}/>
                 <Route path="/Users"
