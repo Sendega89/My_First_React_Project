@@ -1,5 +1,11 @@
+.Profile {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.avatar {
 
+}
 .description {
     padding: 15px;
-color:indigo;
+    color:indigo;
 }

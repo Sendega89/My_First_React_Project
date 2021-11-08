@@ -22,7 +22,7 @@ function App() {
             <Header/>
             <Sidebar/>
             <div className="content">
-                <Route path="/Profile/:userId"
+                <Route path="/Profile/:userId?"
                        render={() => <ProfileContainer />}/>
                 <Route path="/Dialogs"
                        render={() => <DialogsContainer/>}/>
