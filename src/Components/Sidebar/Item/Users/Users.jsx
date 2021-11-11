@@ -2,6 +2,7 @@ import React from "react";
 import s from "./Users.module.css";
 import userPhoto from "../../../../assets/images/238794638_3714455842112197_7316010721790369478_n.jpg";
 import {NavLink} from "react-router-dom";
+import * as axios from "axios";
 
 
 function Users(props) {
@@ -32,10 +33,30 @@ function Users(props) {
                      <div>
                         {u.followed
                             ? <button onClick={() => {
-                                props.unfollow(u.id)
+                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{
+                                    withCredentials: true,
+                                    headers:{
+                                        "API-KEY":"75b9535f-ac86-4688-992f-8643bc54bbe1"
+                                    }
+                                })
+                                    .then(response => {
+                                        if (response.data.resultCode === 0) {
+                                            props.unfollow(u.id)
+                                        }
+                                    });
                             }}>UnFollow</button>
                             : <button onClick={() => {
-                                props.follow(u.id)
+                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                    withCredentials: true,
+                                    headers:{
+                                        "API-KEY":"75b9535f-ac86-4688-992f-8643bc54bbe1"
+                                    }
+                                })
+                                    .then(response => {
+                                        if (response.data.resultCode === 0) {
+                                            props.follow(u.id)
+                                        }
+                                    });
                             }}>Follow</button>
                         }
                      </div></div>
@@ -49,9 +70,9 @@ function Users(props) {
                         <div>{"u.city"}</div>
                     </span>
             </div>)
-            }
-            < /div>
         }
+    < /div>
+}
 
 
-        export default Users;
+export default Users;
