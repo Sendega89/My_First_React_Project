@@ -5,6 +5,8 @@ import {NavLink} from "react-router-dom";
 import {deleteFollow, postUnFollow} from "../../../../api/api";
 
 
+
+
 function Users(props) {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
@@ -33,18 +35,22 @@ function Users(props) {
                         </NavLink>
                      <div>
                         {u.followed
-                            ? <button onClick={() => {
+                            ? <button disabled={props.followingInProgress} onClick={() => {
+                                props.toggleFollowingProgress(true)
                                 deleteFollow(u).then(data => {
                                         if (data.resultCode === 0) {
                                             props.unfollow(u.id)
                                         }
+                                    props.toggleFollowingProgress(false);
                                     });
                             }}>UnFollow</button>
                             : <button onClick={() => {
+                                props.toggleFollowingProgress(true);
                                 postUnFollow(u).then(data => {
                                         if (data.resultCode === 0) {
                                             props.follow(u.id)
                                         }
+                                    props.toggleFollowingProgress(false);
                                     });
                             }}>Follow</button>
                         }
