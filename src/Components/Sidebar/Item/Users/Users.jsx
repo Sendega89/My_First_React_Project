@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Users.module.css";
 import userPhoto from "../../../../assets/images/238794638_3714455842112197_7316010721790369478_n.jpg";
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
+import {deleteFollow, postUnFollow} from "../../../../api/api";
 
 
 function Users(props) {
@@ -15,6 +15,7 @@ function Users(props) {
     return <div>
         <div>
             {pages.map(p => {
+
                 return <span className={props.currentPage === p && s.selectedPage}
                              onClick={() => {
                                  props.onPageChanged(p)
@@ -33,27 +34,15 @@ function Users(props) {
                      <div>
                         {u.followed
                             ? <button onClick={() => {
-                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{
-                                    withCredentials: true,
-                                    headers:{
-                                        "API-KEY":"75b9535f-ac86-4688-992f-8643bc54bbe1"
-                                    }
-                                })
-                                    .then(response => {
-                                        if (response.data.resultCode === 0) {
+                                deleteFollow(u).then(data => {
+                                        if (data.resultCode === 0) {
                                             props.unfollow(u.id)
                                         }
                                     });
                             }}>UnFollow</button>
                             : <button onClick={() => {
-                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                    withCredentials: true,
-                                    headers:{
-                                        "API-KEY":"75b9535f-ac86-4688-992f-8643bc54bbe1"
-                                    }
-                                })
-                                    .then(response => {
-                                        if (response.data.resultCode === 0) {
+                                postUnFollow(u).then(data => {
+                                        if (data.resultCode === 0) {
                                             props.follow(u.id)
                                         }
                                     });

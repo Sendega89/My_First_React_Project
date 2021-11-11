@@ -16,18 +16,18 @@ import {getUsers} from "../../../../api/api";
 class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true);
-        getUsers(this.props.currentPage,this.props.pageSize).then(response => {
+        getUsers(this.props.currentPage,this.props.pageSize).then(data => {
                 this.props.toggleIsFetching(false);
-                this.props.setUsers(response.data.items);
-                this.props.setTotalUsersCount(response.data.totalCount);
+                this.props.setUsers(data.items);
+                this.props.setTotalUsersCount(data.totalCount);
             });
     }
     onPageChanged = (pageNumber) => {
         this.props.toggleIsFetching(true);
         this.props.setCurrentPages(pageNumber)
-        getUsers(pageNumber,this.props.pageSize).then(response => {
+        getUsers(pageNumber,this.props.pageSize).then(data => {
                 this.props.toggleIsFetching(false);
-                this.props.setUsers(response.data.items);
+                this.props.setUsers(data.items);
             });
     }
 
@@ -58,12 +58,8 @@ let mapStateToProps = (state) => {
         isFetching: state.usersPage.isFetching
     }
 };
-/*let mapDispatchToProps=(dispatch) => {
-    return {
 
-        }
-    }
-};*/
+
 
 
 export default connect(mapStateToProps,{follow,unfollow,setUsers,setCurrentPages,setTotalUsersCount,toggleIsFetching,}) (UsersContainer);
