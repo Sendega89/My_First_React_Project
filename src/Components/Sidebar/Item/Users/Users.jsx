@@ -35,22 +35,22 @@ function Users(props) {
                         </NavLink>
                      <div>
                         {u.followed
-                            ? <button disabled={props.followingInProgress} onClick={() => {
-                                props.toggleFollowingProgress(true)
+                            ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.toggleFollowingProgress(true, u.id)
                                 deleteFollow(u).then(data => {
                                         if (data.resultCode === 0) {
                                             props.unfollow(u.id)
                                         }
-                                    props.toggleFollowingProgress(false);
+                                    props.toggleFollowingProgress(false, u.id);
                                     });
                             }}>UnFollow</button>
-                            : <button onClick={() => {
-                                props.toggleFollowingProgress(true);
+                            : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.toggleFollowingProgress(true,u.id);
                                 postUnFollow(u).then(data => {
                                         if (data.resultCode === 0) {
                                             props.follow(u.id)
                                         }
-                                    props.toggleFollowingProgress(false);
+                                    props.toggleFollowingProgress(false, u.id);
                                     });
                             }}>Follow</button>
                         }
