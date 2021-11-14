@@ -11,7 +11,9 @@ function ProfileInfo(props) {
         <div className={s.Profile}>
 
             <div className={s.avatar}>
-                <img src={props.profile.photos.large} alt="avatar"/>
+                <img src={props.profile.photos.large != null ? props.profile.photos.large  :
+                    <img src='https://img2.akspic.ru/previews/5/7/1/6/6/166175/166175-gubka_bob-multfilm-multik-bikini_bottom-nikelodeon-500x.jpg'/> }
+                     alt='avatar'/>
             </div>
 
             <div className={s.description}>
