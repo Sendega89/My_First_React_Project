@@ -2,8 +2,8 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
-.avatar {
-
+.avatar  img {
+   height: 300px;
 }
 .description {
     padding: 15px;
