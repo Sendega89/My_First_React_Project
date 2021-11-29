@@ -9,7 +9,7 @@ import DialogsContainer from "./Components/Sidebar/Item/Dialogs/DialogsContainer
 import UsersContainer from "./Components/Sidebar/Item/Users/UsersContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
-import Login from "./Components/Profile/Login/Login";
+import LoginPage from "./Components/Profile/Login/Login";
 
 
 
@@ -32,7 +32,7 @@ function App() {
                 <Route path="/Photo" component={Photo}/>
                 <Route path="/News" component={News}/>
                 <Route path="/Settings" component={Settings}/>
-                <Route path="/Login" component={Login}/>
+                <Route path="/Login" component={LoginPage}/>
 
             </div>
 
