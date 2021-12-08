@@ -4,3 +4,15 @@
 .fonImage img {
     width: 100%;
 }
+.statusContainer {
+    background-color: powderblue;
+    margin: 10px;
+    display: flex;
+}
+.statusBox {
+    border: 2px solid black;
+    margin-left: 80%;
+}
+.statusInfo {
+
+}
