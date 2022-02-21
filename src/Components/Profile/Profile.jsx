@@ -5,7 +5,7 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import ProfileStatus from "./ProfileStatus"
 
 
-function Profile(props) {
+const Profile =(props) => {
     return (
         <div className={s.Profile}>
             {/*<div className={s.fonImage}>
@@ -13,7 +13,7 @@ function Profile(props) {
                     src='https://st3.depositphotos.com/1194063/18197/i/600/depositphotos_181977680-stock-photo-two-red-hearts-on-rustic.jpg'
                     alt='TopImage'/>
             </div>*/}
-            <ProfileStatus status={"Hello world"} />
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             <ProfileInfo profile={props.profile} />
             <MyPostsContainer />
         </div>
