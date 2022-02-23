@@ -4,7 +4,6 @@ import Post from "./Post/Post";
 import {Field, Form, Formik} from "formik";
 
 
-
 function AddNewPostForm(props) {
     return <>
         <Formik
@@ -14,44 +13,33 @@ function AddNewPostForm(props) {
 
             onSubmit={(values, {resetForm}) => {
                 props.onSubmit(values);
-                resetForm({values:''});
+                resetForm({values: ''});
             }
-        }>
-            {({values, handleChange, handleSubmit}) => (
+            }>
+            {({values}) => (
                 <Form className={s.login_form}>
                     <div><Field type={"text"}
                                 name={"postText"}
                                 placeholder={'Enter post text here'}
-                                onChange={handleChange}
-                                value={values.login}/></div>
+                                value={values.postText}/></div>
                     <div>
-                        <button type={`submit`}
-                                className={s.button}
-                                onClick={handleSubmit}
-                        >Add Post
-                        </button>
+                        <button type={`submit`} className={s.button}>Add Post</button>
+
+
                     </div>
 
                 </Form>
             )}
         </Formik>
-    {/*<textarea ref={props.ref}
-              value={props.value}
-              onChange={props.onChange}
-              placeholder="Enter text here"/>
-    <div>
-        <button onClick={props.onClick} >Add post</button>
-    </div>;*/}
-</>
+    </>
 }
 
 
-const MyPosts=(props)=> {
+const MyPosts = (props) => {
 
 
     let posts = props.postData.map(p => <Post message={p.message}
                                               likesCount={p.likesCount}/>);
-    //let newPostElement = React.createRef();
 
     let onAddPost = (values) => {
         props.addPost(values);
@@ -68,11 +56,8 @@ const MyPosts=(props)=> {
                 </div>
             </div>
         </div>
-            )
+    )
 }
-
-
-
 
 
 export default MyPosts

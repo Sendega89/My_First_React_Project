@@ -39,19 +39,15 @@ const AddMessageForm = (props)=>{
                 props.onSendMessageClick(messageText);
                 resetForm({values:''});
             }}>
-            {({values, handleChange, handleSubmit}) => (
+            {({values}) => (
                 <Form className={s.message_form}>
                     <div><Field type={"text"}
                                 name={"message"}
                                 placeholder={'Enter your message'}
-                                onChange={handleChange}
-                                value={values.login}/>
+                                value={values.message}/>
                     </div>
                     <div>
-                        <button type={`submit`}
-                                onClick={handleSubmit}
-                        >Send
-                        </button>
+                        <button type={`submit`}>Send</button>
                     </div>
 
                 </Form>
