@@ -44,7 +44,7 @@ let store = {
                 {id: 3, message: 'He'},
                 {id: 4, message: 'Hy'}
             ],
-            newMessageBody: ""
+           // newMessageBody: ""
         },
         sideBar:{  }
     },

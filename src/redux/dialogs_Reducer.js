@@ -1,4 +1,3 @@
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let initialState = {
@@ -36,29 +35,25 @@ let initialState = {
         {id: 3, message: 'He'},
         {id: 4, message: 'Hy'}
     ],
-    newMessageBody: ''
+
 }
 
 const dialogs_Reducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY:
-            return {
-                ...state,
-                newMessageBody: action.body
-            };
+
         case SEND_MESSAGE:
-            let body = state.newMessageBody;
+            let newMessageText = action.values
+            let idNumber =state.messageData.length+1
             return {
                 ...state,
-                newMessageBody: '',
-                messageData: [...state.messageData, {id: 5, message: body}]
+                //Добавил уникальный id не как у Димыча
+                messageData: [...state.messageData, {id:idNumber, message:newMessageText}]
             };
         default :
             return state;
     }
 }
-export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
-export const updateNewMessageBodyCreator = (body) =>
-    ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
+export const sendMessageActionCreator = (values) => ({type: SEND_MESSAGE, values})
+
 export default dialogs_Reducer;

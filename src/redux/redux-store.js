@@ -11,7 +11,8 @@ let reducers = combineReducers({
         dialogsPage: dialogs_Reducer,
         sidebar: sidebar_Reducer,
         usersPage: users_Reducer,
-        auth:authReducer
+        auth:authReducer,
+
     }
 );
 
