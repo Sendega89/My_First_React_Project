@@ -5,13 +5,11 @@ import Message from "./Message/Message";
 import {Field, Form, Formik} from "formik";
 
 
-
-
 const Dialogs = (props) => {
 
-    let dialogsElements = props.state.dialogsData.map(d => <DialogItem name={d.name} key={d.id} id={d.id} avatar={d.avatar}/>);
+    let dialogsElements = props.state.dialogsData.map(d => <DialogItem name={d.name} key={d.id} id={d.id}
+                                                                       avatar={d.avatar}/>);
     let messagesElements = props.state.messageData.map(m => <Message message={m.message} key={m.id}/>);
-
 
 
     return (
@@ -21,30 +19,31 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 <div>{messagesElements}</div>
-                <AddMessageForm onSendMessageClick={props.onSendMessageClick} />
+                <AddMessageForm onSendMessageClick={props.onSendMessageClick}/>
             </div>
         </div>
     )
 }
 
-const AddMessageForm = (props)=>{
+const AddMessageForm = (props) => {
 
-    return  <div>
+    return <div>
         <Formik
             initialValues={{
                 message: '',
             }}
-            onSubmit={(values,{resetForm}) => {
-              let messageText =  values.message
+            onSubmit={(values, {resetForm}) => {
+                let messageText = values.message
                 props.onSendMessageClick(messageText);
-                resetForm({values:''});
+                resetForm({values: ''});
             }}>
             {({values}) => (
                 <Form className={s.message_form}>
                     <div><Field type={"text"}
                                 name={"message"}
                                 placeholder={'Enter your message'}
-                                value={values.message}/>
+                                value={values.message}
+                                className={s.message_form_input}/>
                     </div>
                     <div>
                         <button type={`submit`}>Send</button>

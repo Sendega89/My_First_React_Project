@@ -22,10 +22,10 @@ export const usersAPI = {
         )
     },
 
-    getProfile(userId) {
+   /* getProfile(userId) {
         console.warn('Obsolete method,please use profileAPI object')
         return profileAPI.getProfile(userId)
-    },
+    },*/
     unfollow (userId) {
         return instance.delete(`follow/${userId}`)
     },

@@ -5,15 +5,19 @@
 .item {
     color: blue;
 }
-.posts {
-
-}
 .myPost {
     margin-left: 10px;
 }
-.textArea {
-    padding-left: 10px;
+ .login_form_input, .login_form_button {
+    padding: 10px;
+     text-align: center;
 }
-.button {
-    margin-left: 10px;
+.login_form_input {
+    margin-bottom: 10px;
+}
+.textArea {}
+.posts{}
+.myPost_form {
+    border: 1px solid lightblue;
+    width: 200px;
 }

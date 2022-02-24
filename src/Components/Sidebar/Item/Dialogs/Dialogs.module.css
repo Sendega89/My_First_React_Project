@@ -24,3 +24,10 @@
 .active {
     color: gold;
 }
+.message_form div {
+    padding: 10px;
+
+}
+.message_form_input {
+    height: 20px;
+}

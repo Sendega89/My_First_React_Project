@@ -11,30 +11,24 @@ const LoginForm = () => {
                 password: '',
                 remember: false
             }}
-            validateOnBlur
             onSubmit={(values) => {
                 console.log(values)
             }}>
-            {({values, handleChange, handleSubmit}) => (
+            {({values}) => (
                 <Form className={s.login_form}>
                     <div><Field type={"login"}
                                 name={"login"}
                                 placeholder={'Login'}
-                                onChange={handleChange}
                                 value={values.login}/></div>
+
                     <div><Field type={`password`}
                                 name={`password`}
                                 placeholder={'Password'}
-                                onChange={handleChange}
-                                value={values.password}
-                    /></div>
+                                value={values.password} /></div>
+
                     <div><Field type={`checkbox`} name={`remember`}/> remember me?</div>
-                    <div>
-                        <button type={`submit`}
-                                onClick={handleSubmit}
-                        >Log-In
-                        </button>
-                    </div>
+
+                    <div> <button type={`submit`}>Log-In</button></div>
 
                 </Form>
             )}

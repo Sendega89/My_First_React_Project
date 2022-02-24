@@ -17,15 +17,14 @@ function AddNewPostForm(props) {
             }
             }>
             {({values}) => (
-                <Form className={s.login_form}>
-                    <div><Field type={"text"}
+                <Form className={s.myPost_form}>
+                    <div><Field className={s.login_form_input}
+                                type={"text"}
                                 name={"postText"}
                                 placeholder={'Enter post text here'}
                                 value={values.postText}/></div>
                     <div>
-                        <button type={`submit`} className={s.button}>Add Post</button>
-
-
+                        <button type={`submit`} className={s.login_form_button}>Add Post</button>
                     </div>
 
                 </Form>
@@ -39,7 +38,8 @@ const MyPosts = (props) => {
 
 
     let posts = props.postData.map(p => <Post message={p.message}
-                                              likesCount={p.likesCount}/>);
+                                              likesCount={p.likesCount}
+                                              key={p.id+1}/>);
 
     let onAddPost = (values) => {
         props.addPost(values);
