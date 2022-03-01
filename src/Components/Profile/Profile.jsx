@@ -4,20 +4,13 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import ProfileStatus from "./ProfileStatus"
 
-
 const Profile =(props) => {
     return (
         <div className={s.Profile}>
-            {/*<div className={s.fonImage}>
-                <img
-                    src='https://st3.depositphotos.com/1194063/18197/i/600/depositphotos_181977680-stock-photo-two-red-hearts-on-rustic.jpg'
-                    alt='TopImage'/>
-            </div>*/}
             <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             <ProfileInfo profile={props.profile} />
             <MyPostsContainer />
         </div>
     )
 }
-
 export default Profile

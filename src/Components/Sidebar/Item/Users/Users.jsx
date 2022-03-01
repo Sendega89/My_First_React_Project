@@ -3,19 +3,12 @@ import s from "./Users.module.css";
 import userPhoto from "../../../../assets/images/238794638_3714455842112197_7316010721790369478_n.jpg";
 import {NavLink} from "react-router-dom";
 
-
-
-
-
-
-
 function Users(props) {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-
     return <div>
         <div>
             {pages.map(p => {
@@ -45,8 +38,6 @@ function Users(props) {
                              : <button disabled={props.followingInProgress.some(id => id === u.id)}
                                        onClick={() => { props.follow(u.id) }}>
                                  Follow</button>}
-
-
                      </div></div>
                 </span>
                 <span>
@@ -61,6 +52,4 @@ function Users(props) {
         }
     < /div>
 }
-
-
 export default Users;

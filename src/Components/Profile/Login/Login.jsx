@@ -1,6 +1,7 @@
 import React from "react";
 import s from './Login.module.css'
 import {Formik, Form, Field} from "formik";
+import {requiredField} from "../../../utils/validators/validator";
 
 const LoginForm = () => {
 
@@ -11,12 +12,14 @@ const LoginForm = () => {
                 password: '',
                 remember: false
             }}
+            validate={requiredField}
             onSubmit={(values) => {
                 console.log(values)
             }}>
             {({values}) => (
                 <Form className={s.login_form}>
                     <div><Field type={"login"}
+                                validate={requiredField}
                                 name={"login"}
                                 placeholder={'Login'}
                                 value={values.login}/></div>
@@ -36,7 +39,6 @@ const LoginForm = () => {
     </div>
 }
 const Login = () => {
-
     return <div>
         <div className={s.login_container}>
             <h1> Welcome </h1>
@@ -44,6 +46,4 @@ const Login = () => {
         </div>
     </div>
 }
-
-
 export default Login;

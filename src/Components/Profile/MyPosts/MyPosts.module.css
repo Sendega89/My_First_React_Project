@@ -15,9 +15,16 @@
 .login_form_input {
     margin-bottom: 10px;
 }
-.textArea {}
+.textArea .error{
+    border: 2px solid red;
+}
 .posts{}
 .myPost_form {
     border: 1px solid lightblue;
     width: 200px;
+}
+
+.login_form_button span{
+    color:red;
+
 }
