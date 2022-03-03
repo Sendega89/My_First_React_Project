@@ -4,7 +4,7 @@ import {Formik, Form, Field} from "formik";
 import {connect} from "react-redux";
 import {login} from "../../../redux/auth_Reducer";
 import {Redirect} from "react-router-dom";
-import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
+
 
 
 const LoginForm = (props) => {
@@ -24,10 +24,10 @@ const LoginForm = (props) => {
             }}>
             {({values}) => (
                 <Form className={s.login_form}>
-                    <div><Field type={"email"}
+                    <div><Field type={"login"}
                                 name={"email"}
                                 placeholder={'Login'}
-                                value={values.login}/></div>
+                                value={values.email}/></div>
 
                     <div><Field type={`password`}
                                 name={`password`}

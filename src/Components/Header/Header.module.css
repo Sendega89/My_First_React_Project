@@ -1,17 +1,16 @@
-.header img {
-    height: 100%;
-
-}
-
 .header {
     grid-area: header;
-background: lightcoral;
+    background: lightcoral;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
 }
-
-.loginBlock {
-    float: right;
+.header_logo {
+    height: 100%;
 }
 .loginBlock_button {
-    margin-left: 20px;
-    margin-right: 10px;
+    margin: 0 10px 0 10px;
+}
+.header_logo {
+    margin-left: 10px;
 }
