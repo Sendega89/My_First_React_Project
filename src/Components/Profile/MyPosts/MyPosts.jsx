@@ -2,11 +2,11 @@ import React from "react";
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 import {Field, Form, Formik} from "formik";
-import {myPostValidator} from "../../../utils/validators/validator";
+import {lengthValidator} from "../../../utils/validators/validator";
 //import * as Yup from 'yup';
 
 
-const maxLength = myPostValidator(15)
+const maxLength = lengthValidator(10)
 function AddNewPostForm(props) {
 
     return <>
@@ -23,7 +23,7 @@ function AddNewPostForm(props) {
             }>
             {({values,errors,touched,isValid,dirty}) => (
                 <Form className={s.myPost_form}>
-                    <div><Field className={s.login_form_input + " "+`${errors.postText && touched && dirty ? s.error: ''}`}
+                    <div><Field className={s.login_form_input+" "+`${errors.postText && touched && dirty ? s.error: ''}`}
                                 type={"text"}
                                 name={"postText"}
                                 validate={maxLength}

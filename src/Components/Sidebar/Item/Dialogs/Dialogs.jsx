@@ -3,8 +3,9 @@ import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import {Field, Form, Formik} from "formik";
+import {lengthValidator} from "../../../../utils/validators/validator";
 
-
+const maxLength = lengthValidator(10)
 const Dialogs = (props) => {
 
     let dialogsElements = props.state.dialogsData.map(d => <DialogItem name={d.name} key={d.id} id={d.id}
@@ -36,16 +37,19 @@ const AddMessageForm = (props) => {
                 props.onSendMessageClick(messageText);
                 resetForm({values: ''});
             }}>
-            {({values}) => (
+            {({values, errors, isValid, touched, dirty}) => (
                 <Form className={s.message_form}>
-                    <div><Field type={"text"}
+                    <div><Field className={s.message_form_input+`${errors.message && touched && dirty ? s.error: ''}`}
+                                type={"text"}
                                 name={"message"}
                                 placeholder={'Enter your message'}
+                                validate={maxLength}
                                 value={values.message}
-                                className={s.message_form_input}/>
+                    />
                     </div>
                     <div>
                         <button type={`submit`}>Send</button>
+                        {errors.message && dirty && <span>Error Length! </span>}
                     </div>
 
                 </Form>

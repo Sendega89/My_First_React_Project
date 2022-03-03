@@ -1,26 +1,31 @@
 import React from "react";
 import s from './Login.module.css'
 import {Formik, Form, Field} from "formik";
-import {requiredField} from "../../../utils/validators/validator";
+import {connect} from "react-redux";
+import {login} from "../../../redux/auth_Reducer";
+import {Redirect} from "react-router-dom";
+import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 
-const LoginForm = () => {
+
+const LoginForm = (props) => {
 
     return <div>
         <Formik
             initialValues={{
-                login: '',
+                email: '',
                 password: '',
-                remember: false
+                rememberMe: false
             }}
-            validate={requiredField}
+
             onSubmit={(values) => {
-                console.log(values)
+
+                props.login(values.email,values.password,values.rememberMe);
+                console.log('go')
             }}>
             {({values}) => (
                 <Form className={s.login_form}>
-                    <div><Field type={"login"}
-                                validate={requiredField}
-                                name={"login"}
+                    <div><Field type={"email"}
+                                name={"email"}
                                 placeholder={'Login'}
                                 value={values.login}/></div>
 
@@ -29,7 +34,8 @@ const LoginForm = () => {
                                 placeholder={'Password'}
                                 value={values.password} /></div>
 
-                    <div><Field type={`checkbox`} name={`remember`}/> remember me?</div>
+                    <div><Field type={`checkbox`}
+                                name={`rememberMe`}/> remember me?</div>
 
                     <div> <button type={`submit`}>Log-In</button></div>
 
@@ -38,12 +44,21 @@ const LoginForm = () => {
         </Formik>
     </div>
 }
-const Login = () => {
+const Login = (props) => {
+
+    if(props.isAuth){
+        return <Redirect to={"/Profile"}/>
+    }
     return <div>
         <div className={s.login_container}>
             <h1> Welcome </h1>
-            <LoginForm/>
+            <LoginForm {...props} />
         </div>
     </div>
 }
-export default Login;
+let mapToProps = (state) => (
+    {
+        isAuth:state.auth.isAuth
+    })
+
+export default connect (mapToProps, {login} ) (Login);

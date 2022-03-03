@@ -11,3 +11,7 @@ background: lightcoral;
 .loginBlock {
     float: right;
 }
+.loginBlock_button {
+    margin-left: 20px;
+    margin-right: 10px;
+}
