@@ -11,10 +11,10 @@ function Header(props) {
                 src={logoImg} alt="logo"/>
             <div className={s.loginBlock} >
                 {props.isAuth ? <div className={s.loginBlock_login}>{props.login}
-                <button className={s.loginBlock_button}
-                onClick={props.logout}>Log-Out</button>
+                <span className={s.loginBlock_button}
+                onClick={props.logout}>Log-Out</span>
                 </div>:
-                    <NavLink to={'/login'}> Login</NavLink>
+                    <NavLink to={'/login'} className={s.loginBlock_loginText}> Login</NavLink>
                 }
 
             </div>

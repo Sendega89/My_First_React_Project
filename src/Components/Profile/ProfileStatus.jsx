@@ -39,7 +39,7 @@ this.setState({
                 <div className={s.statusBox}>
                     {!this.state.editMode &&
                         <div className={s.statusInfo}>
-                            <span onDoubleClick={this.activateEditMode}>{this.props.status || "Enter status"}</span>
+                            <span onClick={this.activateEditMode}>{this.props.status || "Enter status"}</span>
                         </div>}
                     {this.state.editMode &&
                         <div className={s.statusInput}>

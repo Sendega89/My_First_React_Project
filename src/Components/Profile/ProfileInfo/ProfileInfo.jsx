@@ -8,16 +8,15 @@ function ProfileInfo(props) {
     if (!props.profile) {
         return <Preloader/>
     }
-    return <div>
-        <div className={s.Profile}>
+    return <div className={s.wrapper}>
 
-            <div className={s.avatar}>
+        <div className={s.profile}>
+            <div className={s.profile_avatar}>
                 <img src={props.profile.photos.large != null ? props.profile.photos.large  :
                     fishAvatar}
                      alt='avatar'/>
             </div>
-
-            <div className={s.description}>
+            <div className={s.profile_description}>
                 <ul>
                     <li>fullName: {props.profile.fullName}</li>
                     <li>lookingForAJob: {props.profile.lookingForAJob}</li>

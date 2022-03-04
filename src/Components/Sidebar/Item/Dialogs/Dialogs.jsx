@@ -39,7 +39,7 @@ const AddMessageForm = (props) => {
             }}>
             {({values, errors, isValid, touched, dirty}) => (
                 <Form className={s.message_form}>
-                    <div><Field className={s.message_form_input+`${errors.message && touched && dirty ? s.error: ''}`}
+                    <div><Field className={`${s.message_form_input} ${errors.message && touched && dirty ? s.error: ''}`}
                                 type={"text"}
                                 name={"message"}
                                 placeholder={'Enter your message'}

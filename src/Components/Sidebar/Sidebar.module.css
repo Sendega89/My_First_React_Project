@@ -32,16 +32,5 @@
     font-family: AngryBirds, sans-serif;
 }
 
-.friends_item {
-    color: red;
-    text-align: justify;
-    margin-left: -10px;
-}
 
-.friends_item_name span {
-    padding: 5px;
-}
 
-.friends_item_img span {
-    background-color: antiquewhite;
-}

@@ -1,30 +1,10 @@
+.myPost_wrapper {
+    margin-left: 20px;
+}
 
-.fonImage img {
-    width: 100%;
-}
-.item {
-    color: blue;
-}
-.myPost {
-    margin-left: 10px;
-}
- .login_form_input, .login_form_button {
-    padding: 10px;
-     text-align: center;
-}
-.login_form_input {
-    margin-bottom: 10px;
-}
-.textArea .error{
+.myPosts_form .error{
     border: 2px solid red;
 }
-.posts{}
-.myPost_form {
-    border: 1px solid lightblue;
-    width: 200px;
-}
-
 .login_form_button span{
     color:red;
-
 }

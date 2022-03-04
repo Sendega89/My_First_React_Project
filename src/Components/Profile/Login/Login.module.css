@@ -1,9 +1,20 @@
 .login_container {
-    border: 1px solid black;
-    width: 800px;
+    width: 100%;
     text-align: center;
-    padding: 10px;
 }
-.login_form div {
-    padding: 10px;
+
+.login_form {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid indigo;
+
+
+}
+
+.login_form_button,
+.login_form_input {
+    border: 1px solid indigo;
+    color: indigo;
 }

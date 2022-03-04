@@ -1,11 +1,12 @@
-.Profile {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+.profile {
+    display: flex;
+    flex-wrap: wrap;
 }
-.avatar  img {
-   height: 300px;
+
+.profile_avatar img {
+    height: 300px;
 }
-.description {
-    padding: 15px;
-    color:indigo;
+
+.profile_description {
+    color: indigo;
 }
