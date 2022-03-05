@@ -2,6 +2,7 @@ import React from "react";
 import {authAPI} from "../api/api";
 
 
+
 const SET_USER_DATA = 'SET-USER-DATA';
 
 
@@ -34,18 +35,21 @@ export const getAuthUserData = () => (dispatch) => {
     authAPI.me()
         .then(responce => {
         if (responce.data.resultCode === 0) {
+
             let {id,login,email} = responce.data.data
             dispatch(setAuthUserData(id,login,email,true))
         }
     })
 
 }
-export const login = (email,password,rememberMe) => (dispatch) => {
+export const login = (email,password,rememberMe,setStatus) => (dispatch) => {
 
     authAPI.login(email,password,rememberMe)
         .then(responce => {
             if (responce.data.resultCode === 0) {
                 dispatch(getAuthUserData())
+            } else {
+                setStatus({error:responce.data.messages})
             }
         })
 

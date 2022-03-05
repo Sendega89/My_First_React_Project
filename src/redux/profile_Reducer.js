@@ -5,6 +5,7 @@ const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 
 
+
 let initialState = {
     postData: [
         {id: 1, message: "Hi,how are you", likesCount: '2'},
@@ -46,7 +47,9 @@ const profile_Reducer = (state = initialState, action) => {
 
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const addPostActionCreator = (values) => ({type: ADD_POST,action:values})
-export const setStatus = (status) => ({type: SET_STATUS,status})
+export const setStatusAC = (status) => ({type: SET_STATUS,status})
+
+
 
 export const getUserProfile = (userId) => (dispatch) => {
     profileAPI.getProfile(userId)
@@ -57,14 +60,14 @@ export const getUserProfile = (userId) => (dispatch) => {
 export const getStatus = (userId) => (dispatch) => {
     profileAPI.getStatus(userId)
         .then(response=> {
-        dispatch(setStatus(response.data));
+        dispatch(setStatusAC(response.data));
     });
 }
 export const updateStatus = (status) => (dispatch) => {
     profileAPI.updateStatus(status)
         .then(response=> {
         if(response.data.resultCode === 0){
-            dispatch(setStatus(status))
+            dispatch(setStatusAC(status))
         }
     });
 }

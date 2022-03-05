@@ -15,7 +15,7 @@ function Post(props) {
                {props.message}
            </div>
             <div className={s.myPost_like}>
-                 Like {props.likesCount}
+                <span >Like {props.likesCount}</span>
             </div>
     </div>
 }

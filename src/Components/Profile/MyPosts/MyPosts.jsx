@@ -3,7 +3,7 @@ import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 import {Field, Form, Formik} from "formik";
 import {lengthValidator} from "../../../utils/validators/validator";
-//import * as Yup from 'yup';
+
 
 
 const maxLength = lengthValidator(10)

@@ -16,12 +16,13 @@ const LoginForm = (props) => {
                 rememberMe: false
             }}
 
-            onSubmit={(values) => {
-
-                props.login(values.email, values.password, values.rememberMe);
+            onSubmit={(values, submitProps) => {
+                /*props.onSubmit(formData, submitProps.setStatusAC)
+                submitProps.resetForm()*/
+                props.login(values.email, values.password, values.rememberMe, submitProps.setStatus);
                 console.log('go')
             }}>
-            {({values}) => (
+            {({values, status}) => (
                 <Form className={s.login_form}>
                     <div><Field className={s.login_form_input}
                                 type={"login"}
@@ -38,6 +39,10 @@ const LoginForm = (props) => {
                                 name={`rememberMe`}/> remember me?
                     </div>
 
+                    {status && status.error && (
+                        <div className={s.error}>
+                            {status.error}
+                        </div>)}
                     <div>
                         <button
                             className={s.login_form_button}
