@@ -7,16 +7,14 @@
 }
 .header_logo {
     height: 100%;
+    margin-left: 10px;
 }
 .loginBlock_button {
     margin: 0 10px 0 10px;
     color: gold;
     cursor: pointer;
+}
 
-}
-.header_logo {
-    margin-left: 10px;
-}
 .loginBlock_loginText {
     text-decoration: none;
     color:wheat;

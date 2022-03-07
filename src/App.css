@@ -4,8 +4,9 @@
     margin: 0 auto;
     grid-template-areas:
     "header header header"
-    "nav content content";
-    grid-template-rows: 60px 1fr;
+    "nav content content"
+    "footer footer footer";
+    grid-template-rows: 60px 1fr 100px;
     grid-template-columns: 200px 3fr;
     grid-gap: 5px;
 }

@@ -1,0 +1,20 @@
+.footer {
+    grid-area: footer;
+    background: lightcoral;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+
+.footer_logo  {
+    width: 100px;
+    height: 100%;
+
+}
+.footer_contacts a,
+.footer_description,
+.footer_license {
+    text-decoration: none;
+    color: indigo;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./ProfileInfo.module.css"
 import Preloader from "../../../common/Preloader/Preloader";
-import fishAvatar from "../../../assets/images/businessman-avatar-male-face-icon-600w-538980163.webp"
+import fishAvatar from "../../../assets/images/238794638_3714455842112197_7316010721790369478_n.jpg"
 
 function ProfileInfo(props) {
 

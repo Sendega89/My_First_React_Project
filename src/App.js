@@ -11,10 +11,10 @@ import ProfileContainer from "./Components/Profile/ProfileContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import LoginPage from "./Components/Profile/Login/Login";
 import {connect} from "react-redux";
-
 import {compose} from "redux";
 import {initializeApp} from "./redux/app_Reducer";
 import Preloader from "./common/Preloader/Preloader";
+import Footer from "./Components/Footer/Footer";
 
 
 class App extends React.Component {
@@ -43,6 +43,7 @@ class App extends React.Component {
                     <Route path="/Settings" component={Settings}/>
                     <Route path="/Login" component={LoginPage}/>
                 </div>
+                <Footer />
             </div>
 
         )
@@ -51,8 +52,6 @@ class App extends React.Component {
 const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
-
-
 
 export default compose (withRouter,
     connect (mapStateToProps, {initializeApp})) (App);

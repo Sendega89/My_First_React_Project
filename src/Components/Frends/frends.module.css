@@ -1,0 +1,17 @@
+.friends_wrapper {
+    display: flex;
+    font-family: AngryBirds;
+    color: indigo;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.friends_item  {
+display: flex;
+    justify-content: space-around;
+
+}
+.friends_item span {
+    padding: 10px;
+}

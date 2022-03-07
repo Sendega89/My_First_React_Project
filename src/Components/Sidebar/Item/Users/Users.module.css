@@ -1,8 +1,15 @@
-.avatarItem {
+.avatarItem,
+.user_description
+{
     width: 200px;
     height: 200px;
 }
 .selectedPage {
     font-weight:bold ;
     color: darkred;
+}
+.user_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
