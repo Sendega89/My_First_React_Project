@@ -16,10 +16,7 @@ let reducers = combineReducers({
         app:appReducer,
     }
 );
-
 let store = createStore(reducers, applyMiddleware(thunkMeddleWare));
-
-
 window.store = store;
 
 export default store;

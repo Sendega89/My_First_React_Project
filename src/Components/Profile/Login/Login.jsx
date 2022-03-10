@@ -6,7 +6,7 @@ import {login} from "../../../redux/auth_Reducer";
 import {Redirect} from "react-router-dom";
 
 
-const LoginForm = (props) => {
+const LoginForm = ({login}) => {
 
     return <div>
         <Formik
@@ -15,12 +15,8 @@ const LoginForm = (props) => {
                 password: '',
                 rememberMe: false
             }}
-
             onSubmit={(values, submitProps) => {
-                /*props.onSubmit(formData, submitProps.setStatusAC)
-                submitProps.resetForm()*/
-                props.login(values.email, values.password, values.rememberMe, submitProps.setStatus);
-                console.log('go')
+                login(values.email, values.password, values.rememberMe, submitProps.setStatus);
             }}>
             {({values, status}) => (
                 <Form className={s.login_form}>
@@ -55,9 +51,9 @@ const LoginForm = (props) => {
         </Formik>
     </div>
 }
-const Login = (props) => {
+const Login = ({isAuth, ...props}) => {
 
-    if (props.isAuth) {
+    if (isAuth) {
         return <Redirect to={"/Profile"}/>
     }
     return <div>
