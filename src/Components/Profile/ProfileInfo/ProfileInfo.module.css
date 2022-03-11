@@ -4,9 +4,16 @@
 }
 
 .profile_avatar img {
-    height: 300px;
+max-width: 300px;
+    max-height: 300px;
 }
 
 .profile_description {
     color: indigo;
+}
+.profile_avatar_loadInput {
+    position: absolute;
+    margin-left: -200px;
+    cursor: pointer;
+    color: white;
 }
