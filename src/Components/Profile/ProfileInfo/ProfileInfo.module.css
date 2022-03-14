@@ -10,6 +10,8 @@ max-width: 300px;
 
 .profile_description {
     color: indigo;
+    display: flex;
+    flex-direction: column;
 }
 .profile_avatar_loadInput {
     position: absolute;
@@ -21,6 +23,10 @@ max-width: 300px;
 .profile_description_list li {
     list-style-type: none;
 }
-.profile_data_form {
-    margin-left: 20px;
+.profile_data_form,
+.profile_description_button {
+margin-left: 10px;
+}
+.error {
+    color: red;
 }

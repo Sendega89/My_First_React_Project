@@ -4,7 +4,7 @@ const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 const SAVE_PHOTO_SUSSES = 'SAVE_PHOTO_SUSSES';
-const SAVE_PROFILE = 'SAVE_PROFILE';
+
 
 let initialState = {
     postData: [
@@ -59,7 +59,7 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const addPostActionCreator = (values) => ({type: ADD_POST, action: values});
 export const setStatusAC = (status) => ({type: SET_STATUS, status});
 export const setPhotoSusses = (photos) => ({type: SAVE_PHOTO_SUSSES, photos});
-//export const setSaveProfile = (valuesProfileForm) => ({type: SAVE_PROFILE, valuesProfileForm});
+
 
 
 export const getUserProfile = (userId) => async (dispatch) => {
@@ -83,12 +83,15 @@ export const savePhoto = (file) => async (dispatch) => {
     }
 }
 export const saveProfile = (valuesProfileForm,setStatus) => async (dispatch,getState) => {
+
     const userId = getState().auth.userId;
     let response = await profileAPI.saveProfile(valuesProfileForm)
     if (response.data.resultCode === 0) {
+
        dispatch(getUserProfile(userId));
     } else {
-        setStatus(response.data.messages)
+        setStatus({error:response.data.messages});
+        return Promise.reject();
     }
 }
 export default profile_Reducer;

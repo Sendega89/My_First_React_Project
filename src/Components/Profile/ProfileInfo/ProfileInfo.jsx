@@ -49,7 +49,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
     return <div className={s.profile_description}>
         {isOwner &&
             <div className={s.profile_description_button}>
-                <button onClick={goToEditMode}>edit</button>
+                <button onClick={goToEditMode}>Edit profile</button>
             </div>}
         <ul  className={s.profile_description_list}>
             <li>{profile.fullName || "No name"}</li>
