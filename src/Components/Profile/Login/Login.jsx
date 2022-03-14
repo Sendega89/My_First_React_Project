@@ -46,7 +46,7 @@ const LoginForm = ({login, captchaUrl}) => {
                             {status.error}
                         </div>)}
                     <div>
-                        {captchaUrl && <img src={captchaUrl} alt={'captcha'}/>}
+                        {captchaUrl && <img src={captchaUrl} alt='captcha'/>}
                     </div>
                     <div>
                         {captchaUrl && <Field className={s.login_form_input}

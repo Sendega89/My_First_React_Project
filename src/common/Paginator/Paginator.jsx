@@ -14,6 +14,7 @@ function Paginator({onPageChanged, currentPage, totalUsersCount, pageSize}) {
     let leftPortionPageNumber = (portionNumber - 1) * pageSize + 1;
     let rightPortionPageNumber = portionNumber * pageSize;
 
+
     return <div className={s.users_number_page}>
 
         {portionNumber > 1 &&
@@ -35,7 +36,7 @@ function Paginator({onPageChanged, currentPage, totalUsersCount, pageSize}) {
 
                 return <span className={currentPage === p && s.selectedPage}
                              key={Math.random() + pages}
-                             onClick={(e) => {
+                             onClick={() => {
                                  onPageChanged(p)
                              }
                              }>{p} </span>
@@ -50,7 +51,7 @@ function Paginator({onPageChanged, currentPage, totalUsersCount, pageSize}) {
             </button>
                 <button className={s.users_number_page_last}
                         onClick={() =>{
-                            setPortionNumber(pagesCount) } }
+                            setPortionNumber(portionCount-1) } }
                 > Last page </button>
         </div>}
     </div>

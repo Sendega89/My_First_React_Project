@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import s from "./ProfileInfo.module.css"
 import Preloader from "../../../common/Preloader/Preloader";
-import fishAvatar from "../../../assets/images/238794638_3714455842112197_7316010721790369478_n.jpg"
+import fishAvatar from "../../../assets/images/businessman-avatar-male-face-icon-600w-538980163.webp"
 import ProfileDataForm from "../ProfileDataForm/ProfileDataForm";
 
 function ProfileInfo(props) {
@@ -55,7 +55,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
             <li>{profile.fullName || "No name"}</li>
             <li>lookingForAJob: {profile.lookingForAJob && "Yes" || !profile.lookingForAJob && 'No'}</li>
             <li> {profile.lookingForAJobDescription ? `JobDescription:${profile.lookingForAJobDescription}` : ''}</li>
-            {/*<li> About me: {profile.AboutMe}</li>*/}
+
 
 
             <b>Contacts</b>:{Object.keys(profile.contacts).map(key => {

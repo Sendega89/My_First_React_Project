@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Users.module.css";
-import userPhoto from "../../../../assets/images/businessman-avatar-male-face-icon-600w-538980163.webp";
+import userFish from "../../../../assets/images/businessman-avatar-male-face-icon-600w-538980163.webp";
 import {NavLink} from "react-router-dom";
 
 
@@ -12,7 +12,7 @@ function User({users,followingInProgress,unfollow,follow}) {
                     <div>
                         <NavLink to={"/Profile/" + users.id}>
                         <img className={s.avatarItem}
-                             src={users.photos.small != null ? users.photos.small : userPhoto}
+                             src={users.photos.small != null ? users.photos.small : userFish}
                              alt="avatar"/>
                         </NavLink>
                      <div>
