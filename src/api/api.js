@@ -1,6 +1,5 @@
 import * as axios from "axios";
 
-
 const instance = axios.create(
     {
         withCredentials: true,
@@ -9,7 +8,6 @@ const instance = axios.create(
             "API-KEY": "75b9535f-ac86-4688-992f-8643bc54bbe1"
         }
     });
-
 
 export const usersAPI = {
 
@@ -27,7 +25,6 @@ export const usersAPI = {
     follow(userId) {
         return instance.post(`follow/${userId}`)
             },
-
 }
 
 export const profileAPI = {
@@ -50,21 +47,22 @@ export const profileAPI = {
         return instance.put(`profile/photo`, formData, {
             headers: {"Content-Type":"multipart/form-data" }
     });
-
 }
-
-
 }
 export const authAPI = {
     me() {
         return instance.get(`auth/me`)
     },
-    login(email,password,rememberMe=false) {
-        return instance.post(`auth/login`,{email,password,rememberMe})
+    login(email,password,rememberMe=false,captcha=null) {
+        return instance.post(`auth/login`,{email,password,rememberMe,captcha})
     },
     logout() {
         return instance.delete (`auth/login`)
     },
 }
-
+export const securityAPI = {
+    getCaptchaUrl() {
+        return instance.get(`security/get-captcha-url`)
+    }
+}
 

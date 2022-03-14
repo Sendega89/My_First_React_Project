@@ -6,22 +6,28 @@ import {login} from "../../../redux/auth_Reducer";
 import {Redirect} from "react-router-dom";
 
 
-const LoginForm = ({login}) => {
+const LoginForm = ({login, captchaUrl}) => {
 
     return <div>
         <Formik
             initialValues={{
                 email: '',
                 password: '',
-                rememberMe: false
+                rememberMe: false,
+                captcha: null,
             }}
             onSubmit={(values, submitProps) => {
-                login(values.email, values.password, values.rememberMe, submitProps.setStatus);
+                login(values.email,
+                    values.password,
+                    values.rememberMe,
+                    submitProps.setStatus,
+                   values.captcha);
             }}>
             {({values, status}) => (
                 <Form className={s.login_form}>
+
                     <div><Field className={s.login_form_input}
-                                type={"login"}
+                                type={"Login"}
                                 name={"email"}
                                 placeholder={'Login'}
                                 value={values.email}/></div>
@@ -39,6 +45,14 @@ const LoginForm = ({login}) => {
                         <div className={s.error}>
                             {status.error}
                         </div>)}
+                    <div>
+                        {captchaUrl && <img src={captchaUrl} alt={'captcha'}/>}
+                    </div>
+                    <div>
+                        {captchaUrl && <Field className={s.login_form_input}
+                                              name={`captcha`}
+                                              />}
+                    </div>
                     <div>
                         <button
                             className={s.login_form_button}
@@ -65,7 +79,8 @@ const Login = ({isAuth, ...props}) => {
 }
 let mapToProps = (state) => (
     {
-        isAuth: state.auth.isAuth
+        isAuth: state.auth.isAuth,
+        captchaUrl: state.auth.captchaUrl,
     })
 
 export default connect(mapToProps, {login})(Login);

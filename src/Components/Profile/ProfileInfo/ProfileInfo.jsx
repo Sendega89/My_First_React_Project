@@ -55,7 +55,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
             <li>{profile.fullName || "No name"}</li>
             <li>lookingForAJob: {profile.lookingForAJob && "Yes" || !profile.lookingForAJob && 'No'}</li>
             <li> {profile.lookingForAJobDescription ? `JobDescription:${profile.lookingForAJobDescription}` : ''}</li>
-            <li> About me: {profile.AboutMe}</li>
+            {/*<li> About me: {profile.AboutMe}</li>*/}
 
 
             <b>Contacts</b>:{Object.keys(profile.contacts).map(key => {
