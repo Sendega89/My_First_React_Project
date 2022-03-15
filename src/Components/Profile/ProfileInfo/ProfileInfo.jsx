@@ -16,7 +16,6 @@ function ProfileInfo(props) {
         if (e.target.files.length) {
             props.savePhoto(e.target.files[0])
         }
-
     };
     return <div className={s.wrapper_description}>
 
@@ -47,9 +46,10 @@ function ProfileInfo(props) {
 const ProfileData = ({profile, isOwner, goToEditMode}) => {
 
     return <div className={s.profile_description}>
-        {isOwner &&
-            <div className={s.profile_description_button}>
+        {isOwner && <div>
+            <div >
                 <button onClick={goToEditMode}>Edit profile</button>
+            </div>
             </div>}
         <ul  className={s.profile_description_list}>
             <li>{profile.fullName || "No name"}</li>

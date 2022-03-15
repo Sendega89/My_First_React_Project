@@ -26,7 +26,6 @@ function authReducer(state = initialState, action) {
             return state;
     }
 }
-
 export const setAuthUserData = (id, login, email, isAuth) => ({
     type: SET_USER_DATA, payload:
         {id, email, login, isAuth}

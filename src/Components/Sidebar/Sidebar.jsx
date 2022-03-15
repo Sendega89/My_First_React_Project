@@ -18,8 +18,6 @@ function Sidebar() {
                     <NavLink to="/News" activeClassName={s.activeLink}>News</NavLink></div>
                 <div className={s.item}>
                     <NavLink to="/Photo" activeClassName={s.activeLink}> Photo</NavLink></div>
-               {/* <div className={`${s.item} ${s.settings}`}>
-                    <NavLink to="/Login" activeClassName={s.activeLink}> Login</NavLink></div>*/}
                 <div className={`${s.item} ${s.settings}`}>
                     <NavLink to="/Settings" activeClassName={s.activeLink}> Settings</NavLink></div>
                 <div className={`${s.item}`}>

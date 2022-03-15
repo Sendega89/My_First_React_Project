@@ -4,7 +4,7 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import Settings from "./Components/Sidebar/Item/Settings/Settings";
 import Photo from "./Components/Sidebar/Item/Photo/Photo";
 import News from "./Components/Sidebar/Item/News/News";
-import {Route, withRouter} from "react-router-dom";
+import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 import DialogsContainer from "./Components/Sidebar/Item/Dialogs/DialogsContainer";
 import UsersContainer from "./Components/Sidebar/Item/Users/UsersContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
@@ -32,6 +32,9 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <Sidebar/>
                 <div className="content">
+
+                    <Route exact path="/"
+                           render={() => <Redirect to={'/Profile'}/>}/>
                     <Route path="/Profile/:userId?"
                            render={() => <ProfileContainer/>}/>
                     <Route path="/Dialogs"
@@ -42,6 +45,10 @@ class App extends React.Component {
                     <Route path="/News" component={News}/>
                     <Route path="/Settings" component={Settings}/>
                     <Route path="/Login" component={LoginPage}/>
+                    <Route path="*"
+                           render={() => <div> 404 <br/>
+                               NOT FOUND </div>}/>
+
                 </div>
                 <Footer />
             </div>
