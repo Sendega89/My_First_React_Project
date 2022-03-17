@@ -6,10 +6,12 @@ import users_Reducer from "./users_Reducer";
 import authReducer from "./auth_Reducer";
 import thunkMeddleWare from "redux-thunk";
 import appReducer from "./app_Reducer";
+import music_Reducer from "./music_Reducer";
 
 let reducers = combineReducers({
         profilePage: profile_Reducer,
         dialogsPage: dialogs_Reducer,
+        musicPage:music_Reducer,
         sidebar: sidebar_Reducer,
         usersPage: users_Reducer,
         auth:authReducer,

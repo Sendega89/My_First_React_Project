@@ -1,0 +1,27 @@
+.parameters_item,
+.main_items {
+    display: grid;
+    grid-template-columns:repeat(5,2fr) 1fr;
+    margin: 10px;
+}
+.track_detail_item{
+    display: grid;
+    grid-template-columns:repeat(5,2fr) 1fr;
+}
+.track_detail_wrapper {
+    display: grid;
+    grid-auto-rows: 1fr 2fr;
+
+}
+.item_wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+}
+.search_form_block {
+    text-align: center;
+}
+.music_item b {
+    font-size: x-large;
+    cursor: pointer;
+}

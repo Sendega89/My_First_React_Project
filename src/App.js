@@ -15,6 +15,7 @@ import {compose} from "redux";
 import {initializeApp} from "./redux/app_Reducer";
 import Preloader from "./common/Preloader/Preloader";
 import Footer from "./Components/Footer/Footer";
+import MusicContainer from "./Components/Sidebar/Item/Music/MusicContainer";
 
 
 class App extends React.Component {
@@ -41,13 +42,12 @@ class App extends React.Component {
                            render={() => <DialogsContainer/>}/>
                     <Route path="/Users"
                            render={() => <UsersContainer/>}/>
+                    <Route path="/Music"
+                           render={() => <MusicContainer />}/>
                     <Route path="/Photo" component={Photo}/>
                     <Route path="/News" component={News}/>
                     <Route path="/Settings" component={Settings}/>
                     <Route path="/Login" component={LoginPage}/>
-                    <Route path="*"
-                           render={() => <div> 404 <br/>
-                               NOT FOUND </div>}/>
 
                 </div>
                 <Footer />
