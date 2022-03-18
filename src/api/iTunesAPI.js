@@ -8,11 +8,11 @@ const instance = axios.create(
 
 export const ITunesAPI = {
 
-    getMusic() {
+    getMusic(searchResponse) {
         return (
-            instance.get(`The Beatles`)
+            instance.get(`${searchResponse}&entity=musicVideo`)
                 .then(response => {
-                    return response.data
+                    return response.data.results
                 })
         )
     }

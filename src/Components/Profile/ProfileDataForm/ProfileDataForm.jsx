@@ -44,6 +44,7 @@ const ProfileDataForm = ({profile, saveProfile, setEditMode}) => {
                     <div><Field className={s.profile_description_form_input}
                                 type={"checkbox"}
                                 name={"lookingForAJob"}
+                                value={values.AboutMe}
                     /></div>
                     <b>lookingForAJobDescription:</b>
                     <div><Field className={s.profile_description_form_input}

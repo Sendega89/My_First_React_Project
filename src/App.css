@@ -1,6 +1,6 @@
 .grid {
     display: grid;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     grid-template-areas:
     "header header header"

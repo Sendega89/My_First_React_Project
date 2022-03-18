@@ -1,27 +1,28 @@
-.parameters_item,
-.main_items {
+.items_block_wrapper,
+.parameters_items {
     display: grid;
-    grid-template-columns:repeat(5,2fr) 1fr;
-    margin: 10px;
-}
-.track_detail_item{
-    display: grid;
-    grid-template-columns:repeat(5,2fr) 1fr;
-}
-.track_detail_wrapper {
-    display: grid;
-    grid-auto-rows: 1fr 2fr;
-
-}
-.item_wrapper {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-
+    grid-template-columns: repeat(5,2fr) 1fr;
+    grid-gap: 20px;
+    padding: 10px 0;
 }
 .search_form_block {
     text-align: center;
+    margin: 20px;
+}
+.artist_track_block {
+    grid-column-start: 2;
+    grid-column-end:4;
+    font-size: 30px;
+    padding: 10px 0;
+}
+.details_block_1,
+.parameters_items_item {
+    grid-column-start: 2;
+}
+.details_block_2 {
+    grid-column-start: 4;
 }
 .music_item b {
-    font-size: x-large;
     cursor: pointer;
+    font-size: 30px;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import {Field, Form, Formik} from "formik";
 import s from "../../../Profile/Login/Login.module.css";
 
-const SearchForm = () => {
+const SearchForm = (props) => {
     return <div>
         <Formik
             initialValues={{
@@ -10,7 +10,7 @@ const SearchForm = () => {
 
             }}
             onSubmit={(values, submitProps) => {
-
+           props.getMusicList(values.search)
             }}>
             {({values}) => (
                 <Form className={s.search_form}>

@@ -53,6 +53,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
             </div>}
         <ul  className={s.profile_description_list}>
             <li>{profile.fullName || "No name"}</li>
+            <li>{profile.AboutMe}</li>
             <li>lookingForAJob: {profile.lookingForAJob && "Yes" || !profile.lookingForAJob && 'No'}</li>
             <li> {profile.lookingForAJobDescription ? `JobDescription:${profile.lookingForAJobDescription}` : ''}</li>
 
