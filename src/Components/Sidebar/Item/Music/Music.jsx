@@ -21,7 +21,7 @@ const Music = (props) => {
     return <div>
         <div className={s.search_form_block}>
         <h1>ITunes music</h1>
-        <div>
+        <div >
             <SearchForm getMusicList={props.getMusicList} />
         </div>
         </div>
@@ -32,7 +32,7 @@ const Music = (props) => {
             <div>Collection</div>
             <div>Genre</div>
         </div>
-        <div >
+        <div className={s.music_elements}>
             {musicElements}
         </div>
 

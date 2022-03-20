@@ -1,7 +1,7 @@
 import React from "react";
 import {Field, Form, Formik} from "formik";
 import s from "../../../Profile/Login/Login.module.css";
-
+import style from "../../../../common/CSS Modules/Error.module.scss"
 const SearchForm = (props) => {
     return <div>
         <Formik
@@ -19,7 +19,7 @@ const SearchForm = (props) => {
                                 name={"search"}
                                 placeholder={'search'}
                                 value={values.search}/>
-                        {status && status.error && <div className={s.error}> {status.error} </div>}
+                        {status && status.error && <div className={style.error}> {status.error} </div>}
                         <button
                             className={s.search_form_button}
                             type={`submit`}>Search

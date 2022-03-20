@@ -5,6 +5,7 @@
     grid-gap: 20px;
     padding: 10px 0;
     justify-content: end;
+    background-color: #e9f5fe;
 }
 .search_form_block {
     text-align: center;
@@ -26,4 +27,10 @@
 .music_item b {
     cursor: pointer;
     font-size: 30px;
+}
+.music_elements .items_block_wrapper:nth-child(odd) {
+background-color: #c3def1;
+}
+.music_elements {
+    background-color: #e9f5fe;
 }
