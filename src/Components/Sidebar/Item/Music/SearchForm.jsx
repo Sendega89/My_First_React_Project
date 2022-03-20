@@ -10,15 +10,16 @@ const SearchForm = (props) => {
 
             }}
             onSubmit={(values, submitProps) => {
-           props.getMusicList(values.search)
+           props.getMusicList(values.search, submitProps.setStatus)
             }}>
-            {({values}) => (
+            {({values,status}) => (
                 <Form className={s.search_form}>
                     <div><Field className={s.search_form_input}
                                 type={"text"}
                                 name={"search"}
                                 placeholder={'search'}
                                 value={values.search}/>
+                        {status && status.error && <div className={s.error}> {status.error} </div>}
                         <button
                             className={s.search_form_button}
                             type={`submit`}>Search

@@ -1,10 +1,11 @@
 import React from "react";
-import './App.css';
+import './App.scss';
+import style from "./common/CSS Modules/ThemeStyle.module.scss"
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Settings from "./Components/Sidebar/Item/Settings/Settings";
 import Photo from "./Components/Sidebar/Item/Photo/Photo";
 import News from "./Components/Sidebar/Item/News/News";
-import {Redirect, Route, Switch, withRouter} from "react-router-dom";
+import {Redirect, Route,withRouter} from "react-router-dom";
 import DialogsContainer from "./Components/Sidebar/Item/Dialogs/DialogsContainer";
 import UsersContainer from "./Components/Sidebar/Item/Users/UsersContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
@@ -32,7 +33,7 @@ class App extends React.Component {
             <div className="grid">
                 <HeaderContainer/>
                 <Sidebar/>
-                <div className="content">
+                <div className={style.content}>
 
                     <Route exact path="/"
                            render={() => <Redirect to={'/Profile'}/>}/>

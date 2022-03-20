@@ -26,7 +26,7 @@ const ProfileStatusNew = (props) => {
             <div className={s.statusBox}>
                 {!editMode &&
                     <div className={s.statusInfo}>
-                        <span onClick={activateEditMode}> {props.status || "Enter status"}</span>
+                        <button onClick={activateEditMode}> {props.status || "Enter status"}</button>
                     </div>}
                 {editMode &&
                     <div className={s.statusInput}>

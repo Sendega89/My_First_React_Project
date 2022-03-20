@@ -4,7 +4,7 @@ import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import {Field, Form, Formik} from "formik";
 import {lengthValidator} from "../../../../utils/validators/validator";
-
+import style from "../../../../common/CSS Modules/Error.module.scss"
 const maxLength = lengthValidator(10)
 const Dialogs = (props) => {
 
@@ -39,7 +39,7 @@ const AddMessageForm = (props) => {
             }}>
             {({values, errors, isValid, touched, dirty}) => (
                 <Form className={s.message_form}>
-                    <div><Field className={`${s.message_form_input} ${errors.message && touched && dirty ? s.error: ''}`}
+                    <div><Field className={`${s.message_form_input} ${errors.message && touched && dirty ? style.error: ''}`}
                                 type={"text"}
                                 name={"message"}
                                 placeholder={'Enter your message'}
@@ -49,7 +49,7 @@ const AddMessageForm = (props) => {
                     </div>
                     <div>
                         <button type={`submit`}>Send</button>
-                        {errors.message && dirty && <span>Error Length! </span>}
+                        {errors.message && dirty && <span className={style.error}> Error Length! </span>}
                     </div>
 
                 </Form>

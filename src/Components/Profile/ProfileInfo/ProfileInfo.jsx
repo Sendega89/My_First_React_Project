@@ -24,10 +24,13 @@ function ProfileInfo(props) {
                 <img src={props.profile.photos.large != null ? props.profile.photos.large :
                     fishAvatar}
                      alt='avatar'/>
-                {props.isOwner && <input className={s.profile_avatar_loadInput}
-                                         type={'file'}
-                                         onChange={onMainPhotoSelected}/>}
-            </div>
+                {props.isOwner && <div>
+                    <input className={s.visually_hidden} type="file" id="file" onChange={onMainPhotoSelected}/>
+                    <label for="file">
+                    <div className={s.addImageButton}>Change photo</div>
+                    </label>
+                    </div>}
+                </div>
             {editMode ?
                 <ProfileDataForm profile={props.profile}
                                  saveProfile={props.saveProfile}

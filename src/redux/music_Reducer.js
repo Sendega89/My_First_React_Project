@@ -55,12 +55,16 @@ const music_Reducer = (state = initialState, action) => {
 export const setMusicList = (response) => ({type: SET_MUSIC_LIST, trackData:response});
 
 
-export const getMusicList = (searchText) => async (dispatch) => {
+export const getMusicList = (searchText,setStatus) => async (dispatch) => {
+
   let searchResponse =searchText.split(' ').join('+')
     let response = await iTunesAPI.getMusic(searchResponse);
-
+  if (response.length !== 0){
     dispatch(setMusicList(response));
-
+    setStatus({})
+}  else {
+      setStatus({error:"Not found"});
+  }
 }
 
 

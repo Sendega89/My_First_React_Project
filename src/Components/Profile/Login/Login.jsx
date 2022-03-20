@@ -4,8 +4,7 @@ import {Formik, Form, Field} from "formik";
 import {connect} from "react-redux";
 import {login} from "../../../redux/auth_Reducer";
 import {Redirect} from "react-router-dom";
-
-
+import style from "../../../common/CSS Modules/Error.module.scss"
 const LoginForm = ({login, captchaUrl}) => {
 
     return <div>
@@ -42,7 +41,7 @@ const LoginForm = ({login, captchaUrl}) => {
                     </div>
 
                     {status && status.error && (
-                        <div className={s.error}>
+                        <div className={style.error}>
                             {status.error}
                         </div>)}
                     <div>
@@ -53,9 +52,8 @@ const LoginForm = ({login, captchaUrl}) => {
                                               name={`captcha`}
                                               />}
                     </div>
-                    <div>
+                    <div className={s.login_form_button}>
                         <button
-                            className={s.login_form_button}
                             type={`submit`}>Log-In
                         </button>
                     </div>

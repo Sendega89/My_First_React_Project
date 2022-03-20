@@ -18,7 +18,7 @@ function Paginator({onPageChanged, currentPage, totalUsersCount, pageSize}) {
     return <div className={s.users_number_page}>
 
         {portionNumber > 1 &&
-            <div>
+            <span>
                 <button className={s.users_number_page_second}
                         onClick={() => {
                             setPortionNumber(1)
@@ -30,31 +30,36 @@ function Paginator({onPageChanged, currentPage, totalUsersCount, pageSize}) {
                         }}>
                     Prev
                 </button>
-            </div>}
+            </span>}
         {pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
             .map((p) => {
 
-                return <span className={currentPage === p && s.selectedPage}
+                return <span className={s.numbersOfPages}>
+                <span className={currentPage === p && s.selectedPage}
                              key={Math.random() + pages}
                              onClick={() => {
                                  onPageChanged(p)
                              }
                              }>{p} </span>
+                </span>
             })}
         {portionCount > portionNumber &&
-            <div>
+            <span>
             <button className={s.users_number_page_next}
                     onClick={() => {
                         setPortionNumber(portionNumber + 1)
                     }}>
                 Next
             </button>
-                <button className={s.users_number_page_last}
+            <button className={s.users_number_page_last}
                         onClick={() =>{
                             setPortionNumber(portionCount-1) } }
-                > Last page </button>
-        </div>}
+                > Last
+            </button>
+            </span>
+       }
     </div>
+
 }
 
 export default Paginator;

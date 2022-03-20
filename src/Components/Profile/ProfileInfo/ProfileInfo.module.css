@@ -13,12 +13,20 @@ max-width: 300px;
     display: flex;
     flex-direction: column;
 }
-.profile_avatar_loadInput {
-    position: absolute;
-    width: 90px;
-    margin-left: -300px;
+.visually_hidden {
+    width: 20px;
+    border: 1px black;
+    visibility: hidden;
+}
+.addImageButton {
+    position: relative;
+    bottom: 60px;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    background-color: #70f1ec;
+    box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
     cursor: pointer;
-    color: white;
 }
 .profile_description_list li {
     list-style-type: none;

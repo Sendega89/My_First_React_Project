@@ -3,8 +3,8 @@ import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 import {Field, Form, Formik} from "formik";
 import {lengthValidator} from "../../../utils/validators/validator";
-
-
+import style from "../../../common/CSS Modules/Error.module.scss"
+import ButtonStyle from "../../../common/CSS Modules/ButtonStyle.module.css"
 
 const maxLength = lengthValidator(10)
 
@@ -25,15 +25,15 @@ function AddNewPostForm(props) {
             {({values, errors, touched, isValid, dirty}) => (
                 <Form className={s.myPost_form}>
                     <div><Field
-                        className={s.login_form_input + " " + `${errors.postText && touched && dirty ? s.error : ''}`}
+                        className={s.login_form_input + " " + `${errors.postText && touched && dirty ? style.error : ''}`}
                         type={"text"}
                         name={"postText"}
                         validate={maxLength}
                         placeholder={'Enter post text here'}
                         value={values.postText}/></div>
-                    <div className={s.login_form_button}>
-                        <button type={`submit`} className={s.login_form_button}>Add Post</button>
-                        {errors.postText && dirty && <span>Error Length! </span>}
+                    <div className={ButtonStyle.login_form_button}>
+                        <button  type={`submit`}>Add Post </button>
+                        {errors.postText && dirty && <span className={style.error}> Error Length! </span>}
 
                     </div>
 

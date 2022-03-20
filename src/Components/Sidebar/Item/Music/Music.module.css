@@ -4,6 +4,7 @@
     grid-template-columns: repeat(5,2fr) 1fr;
     grid-gap: 20px;
     padding: 10px 0;
+    justify-content: end;
 }
 .search_form_block {
     text-align: center;

@@ -1,5 +1,5 @@
 .fonImage img {
-    width: 100%;
+    width: 100vh;
 }
 .statusContainer {
     background-color: powderblue;
@@ -8,8 +8,12 @@
     color: indigo;
     justify-content:flex-end;
 }
-.statusInfo {
-margin-right: 10px;
-    cursor: pointer;
-}
+.statusInfo button:hover {
+    transition: all 0.2s;
+    background-color: #70f1ec;
 
+}
+.statusInfo button,
+.statusInput input{
+    margin: 0;
+}

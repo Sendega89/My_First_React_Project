@@ -2,20 +2,13 @@
     width: 100%;
     text-align: center;
 }
-
 .login_form {
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border: 1px solid indigo;
 }
 
-.login_form_button,
-.login_form_input {
-    border: 1px solid indigo;
-    color: indigo;
-}
-.error {
-    color:red;
+.login_form_button input {
+    margin: 0;
+    padding: 0;
 }

@@ -1,25 +1,11 @@
-.header {
-    grid-area: header;
-    background: lightcoral;
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
+.loginBlock {
+display: flex;
+    margin: 20px;
 }
-.header_logo {
-    height: 100%;
-    margin-left: 10px;
+.loginBlock_loginText {
+    color: white;
+
 }
 .loginBlock_button {
-    margin: 0 10px 0 10px;
-    color: gold;
-    cursor: pointer;
-}
-
-.loginBlock_loginText {
-    text-decoration: none;
-    color:wheat;
-    margin-right: 20px;
-}
-.loginBlock_login {
-    color: indigo;
+    margin: 10px;
 }
