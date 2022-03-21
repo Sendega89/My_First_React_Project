@@ -4,23 +4,26 @@
 }
 
 .profile_avatar img {
-max-width: 300px;
+    max-width: 300px;
     max-height: 300px;
 }
 
 .profile_description {
-    color: indigo;
-    display: flex;
-    flex-direction: column;
+    margin-left: 20px;
+    padding: 10px;
 }
+
 .visually_hidden {
     width: 20px;
+    height: 20px;
     border: 1px black;
     visibility: hidden;
 }
+
 .addImageButton {
+    height: 20px;
     position: relative;
-    bottom: 60px;
+    bottom: 30px;
     text-align: center;
     border: 2px solid #fff;
     border-radius: 50px;
@@ -28,16 +31,8 @@ max-width: 300px;
     box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
     cursor: pointer;
 }
-.profile_description_list li {
-    list-style-type: none;
-}
-.profile_data_form,
-.profile_description_button {
-margin-left: 10px;
-}
-.error {
-    color: red;
-}
+
 .wrapper_description {
 
 }
+

@@ -27,9 +27,9 @@
   outline: none;
 }
  button:hover {
-  transition: all 0.5s;
+  transition: all 1.5s;
   box-shadow: 0 7px 14px rgb(65 132 144 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
-background-color: aqua;
+background-color: #93eaea;
 }
  button:active {
   background-color: #808080;

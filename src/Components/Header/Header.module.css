@@ -1,11 +1,15 @@
 .loginBlock {
-display: flex;
-    margin: 20px;
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+    align-items: center;
 }
-.loginBlock_loginText {
-    color: white;
+.loginBlock_button button {
+    margin: 0;
+    font-size: 10px;
+    margin-right: 10px;
+}
+.loginBlock_loginText  {
+    font-size: 15px;
 
-}
-.loginBlock_button {
-    margin: 10px;
 }

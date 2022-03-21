@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import s from "./Profile.module.css";
-
+import style from "../../common/CSS Modules/ThemeStyle.module.scss";
 
 const ProfileStatusNew = (props) => {
     let [editMode, setEditMode] = useState(false);
@@ -22,7 +22,7 @@ const ProfileStatusNew = (props) => {
     }
 
     return (
-        <div className={s.statusContainer}>
+        <div className={style.statusContainer}>
             <div className={s.statusBox}>
                 {!editMode &&
                     <div className={s.statusInfo}>

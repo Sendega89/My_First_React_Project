@@ -1,130 +1,102 @@
-
-
-$MainThemeBGColor: #70f1ec;
+$MainThemeBGColor: #5fc5dc;
 $MainThemeFontColor: #000000;
 $MainThemeBGContentColor: rgba(255, 255, 255, 0.93);
-$MainThemeBUTTONColor:gold;
+$MainThemeBUTTONColor: gold;
 
-@mixin TestButtonStyle {
-    .btn1 {
-        display: inline-block;
-        box-sizing: border-box;
-        padding: 0 25px;
-        margin: 0 15px 15px 0;
-        outline: none;
-        border: 1px solid #fff;
-        border-radius: 50px;
-        height: 46px;
-        line-height: 46px;
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        color: #444;
-        background-color: #fff;
-        box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
-        cursor: pointer;
-        user-select: none;
-        appearance: none;
-        touch-action: manipulation;
-        vertical-align: top;
-        transition: box-shadow 0.2s;
-    }
-    .btn1:focus-visible {
-        border: 1px solid #4c51f9;
-        outline: none;
-    }
-    .btn1:hover {
-        transition: all 0.2s;
-        box-shadow: 0 7px 14px rgb(65 132 144 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
-    }
-    .btn1:active {
-        background-color: #808080;
-    }
-    .btn1:disabled {
-        background-color: #eee;
-        border-color: #eee;
-        color: #444;
-        cursor: not-allowed;
-    }
-}
-
-@mixin MainThemeButtonStyle {
-    color: $MainThemeBUTTONColor;
-    cursor: pointer;
-
-}
 @mixin FlexPositionSettings {
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-@mixin MainThemeFontSettings {
 
+@mixin MainThemeFontSettings {
+  color: #444444;
+  font-family: "Krona One",sans-serif;
+  font-size: 10px;
+  text-decoration: none;
 }
+
 /*___________Header_______________*/
 
 .header {
-    grid-area: header;
-    background: $MainThemeBGColor;
-    @include FlexPositionSettings;
+  grid-area: header;
+  background: $MainThemeBGColor;
+  @include FlexPositionSettings;
+    @include MainThemeFontSettings;
 }
 .header_logo {
-    height: 100%;
-    margin-left: 10px;
+  height: 100%;
+  margin-left: 10px;
 }
 .loginBlock_button {
-    margin: 0 10px 0 10px;
-   @include MainThemeButtonStyle
+  margin: 0 10px 0 10px;
 }
 .loginBlock_loginText {
-    text-decoration: none;
-    color:$MainThemeBGContentColor;
-    margin-right: 20px;
+  @include MainThemeFontSettings;
+  margin-right: 20px;
 }
 .loginBlock_login {
-    color:$MainThemeFontColor;
+  color: $MainThemeFontColor;
 }
-
+.statusContainer {
+  display: flex;
+  justify-content: flex-end;
+  background-color: $MainThemeBGColor;
+}
 /*___________Sidebar_______________*/
 
 .sidebar {
-    grid-area: nav;
-    @include FlexPositionSettings;
-    justify-content:start;
-    flex-direction: column;
-    background-color: $MainThemeBGColor;
+  grid-area: nav;
+  @include FlexPositionSettings;
+  justify-content: start;
+  flex-direction: column;
+  background-color: $MainThemeBGColor;
+    padding:  10px 0;
 }
+
 .item a {
-    font-family:"openSans";
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-decoration: none;
-    color: white;
+  font-family: "Krona One", sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+
 }
- a.activeLink {
-    color: gold;
+.item:hover {
+  transform: scale(1.2);
+}
+
+a.activeLink {
+  color: #d9ea65;
+}
+.item a:hover {
+  color: grey;
 }
 /*___________Content_______________*/
 
 .content {
-    grid-area: content;
-    background-color:$MainThemeBGContentColor;
+  grid-area: content;
+  background-color: $MainThemeBGContentColor;
 }
 
 /*___________Footer_______________*/
 
 .footer {
-    grid-area: footer;
-    background: $MainThemeBGColor;
-    @include FlexPositionSettings;
+  grid-area: footer;
+  background: $MainThemeBGColor;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+    flex-shrink: 1;
+    align-items: center;
 }
-.footer_logo  {
-    width: 100px;
-    height: 100%;
+
+.footer_logo {
+  width: 60px;
+  height: 100%;
 }
+
 .footer_contacts a,
 .footer_description,
 .footer_license {
-    text-decoration: none;
-    color:$MainThemeFontColor;
+  @include MainThemeFontSettings;
 }

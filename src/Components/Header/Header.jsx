@@ -14,11 +14,13 @@ const Header = (props) => {
                 src={logoImg} alt="logo"/>
 
                 {props.isAuth ? <div className={s.loginBlock}>
-                        <div className={s.loginBlock_loginText}>{props.login}</div>
-                <button className={s.loginBlock_button}
-                onClick={props.logout}>Log-Out</button>
-                </div>:
-                    <NavLink to={'/login'} className={style.loginBlock_loginText}> Login</NavLink>
+                        <div className={s.loginBlock_loginText}>Hello {props.login}</div>
+                <div className={s.loginBlock_button}>
+                    <button onClick={props.logout}>Log-Out</button>
+               </div>
+                </div>: <div>
+                    <NavLink to={'/login'} className={s.loginBlock_loginText}> Login</NavLink>
+                </div>
                 }
 
 
