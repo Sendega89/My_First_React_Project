@@ -1,7 +1,7 @@
 import s from "../ProfileInfo/ProfileInfo.module.css";
 import React from "react";
 import {Field, Form, Formik} from "formik";
-
+import style from "../../../common/CSS Modules/Error.module.scss"
 
 const ProfileDataForm = ({profile, saveProfile, setEditMode}) => {
 
@@ -13,6 +13,7 @@ const ProfileDataForm = ({profile, saveProfile, setEditMode}) => {
             AboutMe: profile.AboutMe,
 
         }} onSubmit={(values,submitProps) => {
+
             saveProfile(values,submitProps.setStatus).then(
                 ()=>{
                     setEditMode(false);
@@ -26,7 +27,7 @@ const ProfileDataForm = ({profile, saveProfile, setEditMode}) => {
                         <button className={s.profile_description_form_button}
                                 type={`submit`}>Save
                         </button>
-                        <div className={s.error}>
+                        <div className={style.error}>
 
                             {status && status.error &&
                                  <b>{status.error}</b>
@@ -60,7 +61,7 @@ const ProfileDataForm = ({profile, saveProfile, setEditMode}) => {
                     <div>
                         <b>Contacts</b>:{Object.keys(profile.contacts).map(key => {
                         return <div key={key}>
-                            <b>{key}</b>
+                            {/*<b>{key}</b>*/}
                             <div><Field className={s.profile_description_form_input}
                                         name={'contacts.' + key}
                                         placeholder={key}

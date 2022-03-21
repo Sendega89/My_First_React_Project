@@ -25,8 +25,8 @@ function ProfileInfo(props) {
                     fishAvatar}
                      alt='avatar'/>
                 {props.isOwner && <div>
-                    <input className={s.visually_hidden} type="file" id="file" onChange={onMainPhotoSelected}/>
-                    <label for="file">
+                    <label>
+                        <input className={s.visually_hidden} type="file" id="file" onChange={onMainPhotoSelected}/>
                     <div className={s.addImageButton}>Change photo</div>
                     </label>
                     </div>}
@@ -49,28 +49,21 @@ function ProfileInfo(props) {
 const ProfileData = ({profile, isOwner, goToEditMode}) => {
 
     return <div className={s.profile_description}>
-        {isOwner && <div>
-            <div >
-                <button onClick={goToEditMode}>Edit profile</button>
-            </div>
-            </div>}
-        <ul  className={s.profile_description_list}>
-            <li>{profile.fullName || "No name"}</li>
-            <li>{profile.AboutMe}</li>
-            <li>lookingForAJob: {profile.lookingForAJob && "Yes" || !profile.lookingForAJob && 'No'}</li>
-            <li> {profile.lookingForAJobDescription ? `JobDescription:${profile.lookingForAJobDescription}` : ''}</li>
-
-
-
+        <div>
+             <div> {isOwner && <button onClick={goToEditMode}>Edit</button>}</div>
+            <div>{profile.fullName || "No name"}</div>
+            <div>{profile.AboutMe}</div>
+            <div>lookingForAJob: {profile.lookingForAJob && "Yes" || !profile.lookingForAJob && 'No'}</div>
+            <div> {profile.lookingForAJobDescription ? `JobDescription:${profile.lookingForAJobDescription}` : ''}</div>
+    </div>
+             <div>
             <b>Contacts</b>:{Object.keys(profile.contacts).map(key => {
-                return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
-        })}
-    </ul>
-
+                return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/> })}
+             </div>
     </div>
 }
-const Contact = ({contactTitle,contactValue}) => {
-    return <li>
-       {contactTitle}:{contactValue}</li>
+const Contact = ({contactValue}) => {
+    return <div>
+       {contactValue}</div>
 }
 export default ProfileInfo
