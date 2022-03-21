@@ -60,10 +60,11 @@ export const getMusicList = (searchText,setStatus) => async (dispatch) => {
   let searchResponse =searchText.split(' ').join('+')
     let response = await iTunesAPI.getMusic(searchResponse);
   if (response.length !== 0){
+
     dispatch(setMusicList(response));
     setStatus({})
 }  else {
-      setStatus({error:"Not found"});
+      setStatus({error:`${searchText}-not found`});
   }
 }
 

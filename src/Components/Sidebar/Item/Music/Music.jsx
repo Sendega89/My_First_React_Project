@@ -1,9 +1,24 @@
 import React, {useState} from "react";
 import s from './Music.module.css';
 import SearchForm from "./SearchForm";
+//import Example from "./MusicItem";
 
 
 const Music = (props) => {
+
+    /*let testElements = props.musicData.map(p => <Example
+        key={p.id}
+        artist={p.artist}
+        id={p.id}
+        collection_image={p.collection_image}
+        track={p.track}
+        collection={p.collection}
+        genre={p.genre}
+        trackCount={p.trackCount}
+        price={p.price}
+        trackDuration={p.trackDuration}
+        trackPrice={p.trackPrice}
+    />);*/
     let musicElements = props.musicData.map(p => <Item
         key={p.id}
         artist={p.artist}
@@ -35,7 +50,9 @@ const Music = (props) => {
         <div className={s.music_elements}>
             {musicElements}
         </div>
-
+<div>
+   {/* {testElements}*/}
+</div>
     </div>
 }
 export default Music;

@@ -10,12 +10,11 @@ const  Footer = () => {
                  src={logoImg} alt="logo"/>
         </div>
         <div className={style.footer_description}>
-            <p>Это мой сайт</p>
-            <p>Только мой</p>
+            <p>IT-Kamasutra</p>
         </div>
         <div className={style.footer_contacts}>
           <div> <a href="tel: +380953395977 ">+38 (095) 339-59-77</a> </div>
-           <div> <a href="email:Sendega89@gmail.com">Sendega89@gmail.com</a></div>
+           <div> <a href="mailto:Sendega89@gmail.com"> Sendega89@gmail.com</a></div>
     </div>
 
         <div className={style.footer_license}>

@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(5,2fr) 1fr;
     grid-gap: 20px;
-    padding: 10px 0;
+    padding: 10px 10px;
     justify-content: end;
     background-color: #e9f5fe;
 }
@@ -27,10 +27,12 @@
 .music_item b {
     cursor: pointer;
     font-size: 30px;
+
 }
 .music_elements .items_block_wrapper:nth-child(odd) {
 background-color: #c3def1;
 }
 .music_elements {
     background-color: #e9f5fe;
+    padding: 10px;
 }
