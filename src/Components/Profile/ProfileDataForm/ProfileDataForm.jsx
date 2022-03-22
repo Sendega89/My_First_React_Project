@@ -19,7 +19,6 @@ const ProfileDataForm = ({profile, saveProfile, setEditMode}) => {
                     setEditMode(false);
                 }
             )
-
         }}>
             {({values, status}) => (
                 <Form className={s.profile_description}>
