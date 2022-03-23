@@ -34,19 +34,19 @@ const ProfileDataForm = ({profile, saveProfile, setEditMode}) => {
 
                         </div>
                     </div>
-                    <b>fullName:</b>
+                    <b>Full Name:</b>
                     <div><Field className={s.profile_description_form_input}
                                 type={"text"}
                                 name={"fullName"}
                                 placeholder={'fullName'}
                                 value={values.fullName}/></div>
-                    <b>lookingForAJob:</b>
+                    <b>Looking For A Job:</b>
                     <div><Field className={s.profile_description_form_input}
                                 type={"checkbox"}
                                 name={"lookingForAJob"}
                                 value={values.AboutMe}
                     /></div>
-                    <b>lookingForAJobDescription:</b>
+                    <b>Looking For A Job Description:</b>
                     <div><Field className={s.profile_description_form_input}
 
                                 name={"lookingForAJobDescription"}

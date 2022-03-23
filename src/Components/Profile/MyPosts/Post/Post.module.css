@@ -1,8 +1,9 @@
 .myPost_wrapper {
     display: flex;
-    margin-left: 20px;
-    justify-content:flex-start;
+    width: 100%;
+    justify-content:space-around;
     align-items: center;
+
 }
 .myPost_message {
     margin-left: 10px;
@@ -15,4 +16,7 @@
 .myPost_like {
     align-self:end;
     color: green;
+}
+.myPost_wrapper:nth-child(odd) {
+    background-color:#c3def1;
 }
