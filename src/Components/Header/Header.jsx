@@ -1,7 +1,7 @@
 import React from "react";
 import s from './Header.module.css';
 import {NavLink} from "react-router-dom";
-import logoImg from "../../assets/images/logoUkraine.png"
+import logoImg from "../../assets/images/Free_Sample_By_Wix-removebg-preview.png"
 import style from "../../common/CSS Modules/ThemeStyle.module.scss"
 
 

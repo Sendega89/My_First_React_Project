@@ -1,6 +1,6 @@
-$MainThemeBGColor: #89ccde;
+$MainThemeBGColor: #96d0e0;
 $MainThemeFontColor: #000000;
-$MainThemeBGContentColor: rgba(255, 255, 255, 0.93);
+$MainThemeBGContentColor: rgb(229, 231, 234);
 $MainThemeBUTTONColor: #c4b77b;
 
 @mixin FlexPositionSettings {
@@ -11,7 +11,7 @@ $MainThemeBUTTONColor: #c4b77b;
 
 @mixin MainThemeFontSettings {
   color: #444444;
-  font-family: "Krona One",sans-serif;
+  font-family: "Open Sans",sans-serif;
   font-size: 10px;
   text-decoration: none;
 }
@@ -25,7 +25,7 @@ $MainThemeBUTTONColor: #c4b77b;
     @include MainThemeFontSettings;
 }
 .header_logo {
-  height: 100%;
+  width: 80px;
   margin-left: 10px;
 }
 .loginBlock_button {
@@ -55,7 +55,7 @@ $MainThemeBUTTONColor: #c4b77b;
 }
 
 .item a {
-  font-family: "Krona One", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   text-decoration: none;
   color: white;
@@ -93,12 +93,11 @@ a.activeLink {
 }
 
 .footer_logo {
-  width: 60px;
-  height: 100%;
+  width: 80px;
 }
 
 .footer_contacts a,
-.footer_description,
+.footer_description a,
 .footer_license {
   @include MainThemeFontSettings;
 }

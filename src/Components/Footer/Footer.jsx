@@ -1,6 +1,6 @@
 import React from "react";
 import style from "../../common/CSS Modules/ThemeStyle.module.scss";
-import logoImg from "../../assets/images/logoUkraine.png";
+import logoImg from "../../assets/images/Free_Sample_By_Wix-removebg-preview.png";
 
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
                  src={logoImg} alt="logo"/>
         </div>
         <div className={style.footer_description}>
-            <p>IT-Kamasutra</p>
+            <p><a href={"https:it-kamasutra.com/"}>IT-Kamasutra</a></p>
         </div>
         <div className={style.footer_contacts}>
                 <a href="tel: +380953395977 ">tel: +38 (095) 339-59-77</a>
