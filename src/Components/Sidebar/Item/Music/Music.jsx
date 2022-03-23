@@ -1,13 +1,16 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import s from './Music.module.css';
 import SearchForm from "./SearchForm";
-//import Example from "./MusicItem";
+
+
 
 
 const Music = (props) => {
-
+    useEffect(() => {
+        props.setMusicList(props.musicData);
+    },[]);
     let musicElements = props.musicData.map(p => <Item
-        key={p.id}
+        key={p.duration+p.collection_image}
         artist={p.artist}
         id={p.id}
         collection_image={p.collection_image}
@@ -24,7 +27,8 @@ const Music = (props) => {
         <div className={s.search_form_block}>
         <h1>ITunes music</h1>
         <div >
-            <SearchForm getMusicList={props.getMusicList} />
+            <SearchForm getMusicList={props.getMusicList}
+                        setMusicList={props.setMusicList}/>
         </div>
         </div>
 
@@ -44,7 +48,7 @@ export default Music;
 
 export const Item = (props) => {
     let [trackDetail, setTrackDetail] = useState(false);
-    if (props.id.length !=0) {
+    if (props.id.length !==0) {
         let duration = new Date(props.trackDuration)
     return  <div  className={s.items_block_wrapper}>
         <div className={s.music_item}>
@@ -73,6 +77,7 @@ export const Item = (props) => {
 
     </div>
     } else {
-        return <div></div>
+        return <>
+        </>
     }
 }

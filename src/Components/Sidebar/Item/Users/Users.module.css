@@ -4,6 +4,10 @@
     width: 200px;
     height: 200px;
 }
+.avatarItem:hover {
+    transition-duration:1s;
+    transform: scale(1.2);
+}
 
 .user_container {
     display: flex;

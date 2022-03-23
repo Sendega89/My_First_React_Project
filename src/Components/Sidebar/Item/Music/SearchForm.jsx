@@ -5,6 +5,7 @@ import style from "../../../../common/CSS Modules/Error.module.scss"
 
 
 const SearchForm = (props) => {
+
     return <div>
         <Formik
             initialValues={{
@@ -13,6 +14,7 @@ const SearchForm = (props) => {
             }}
             onSubmit={(values, submitProps) => {
            props.getMusicList(values.search, submitProps.setStatus)
+
             }}>
             {({values,status}) => (
                 <Form className={s.search_form}>

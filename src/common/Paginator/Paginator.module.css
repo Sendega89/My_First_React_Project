@@ -20,11 +20,12 @@
     appearance: none;
     touch-action: manipulation;
     vertical-align: top;
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.5s;
 }
 .numbersOfPages:hover {
-    background-color: aqua;
-    transition: box-shadow 0.2s;
+    background-color: #9fe1e1;
+    transition:2s;
+
 }
 .selectedPage {
      font-weight:bold ;

@@ -9,5 +9,7 @@
     color: #000000;
     outline:none;
 }
-
+.login_form_input {
+    width: 100%;
+}
 

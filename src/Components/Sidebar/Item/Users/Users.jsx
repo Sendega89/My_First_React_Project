@@ -7,7 +7,7 @@ import User from "./User";
 function Users({totalUsersCount, pageSize, onPageChanged, currentPage, ...props}) {
 
 
-    return <div className={s.users_wrapper}>
+    return <div >
         <Paginator totalUsersCount={totalUsersCount}
                    pageSize={pageSize}
                    onPageChanged={onPageChanged}

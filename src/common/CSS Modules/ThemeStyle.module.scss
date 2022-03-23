@@ -62,6 +62,7 @@ $MainThemeBUTTONColor: #c4b77b;
 
 }
 .item:hover {
+  transition-duration:1s;
   transform: scale(1.2);
 }
 
@@ -76,6 +77,7 @@ a.activeLink {
 .content {
   grid-area: content;
   background-color: $MainThemeBGContentColor;
+
 }
 
 /*___________Footer_______________*/

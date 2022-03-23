@@ -3,12 +3,14 @@ import Music from "./Music";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import {getMusicList} from "../../../../redux/music_Reducer";
+import {getMusicList, setMusicList} from "../../../../redux/music_Reducer";
 
 const MusicContainer = (props) => {
 
     return <div>
-        <Music getMusicList={props.getMusicList} musicData={props.musicData} />
+        <Music getMusicList={props.getMusicList}
+               musicData={props.musicData}
+               setMusicList={props.setMusicList}/>
     </div>
 }
 let mapStateToProps = (state) => ({
@@ -18,7 +20,7 @@ let mapStateToProps = (state) => ({
 
 
 export default compose(
-    connect(mapStateToProps, {getMusicList}),
+    connect(mapStateToProps, {getMusicList,setMusicList}),
     withRouter,
 )(MusicContainer)
 
