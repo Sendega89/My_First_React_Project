@@ -1,0 +1,17 @@
+.toDoList_wrapper {
+  display: grid;
+  grid-template-rows: 150px auto;
+justify-content: center;
+}
+
+.toDoListItems {
+  display: grid;
+grid-template-columns: 100px 50px auto;
+  justify-content: space-between;
+}
+.toDoListItems_item {
+  color:grey;
+}
+.checkboxStyle {
+  appearance: auto;
+}

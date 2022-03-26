@@ -17,6 +17,9 @@ import {initializeApp} from "./redux/app_Reducer";
 import Preloader from "./common/Preloader/Preloader";
 import Footer from "./Components/Footer/Footer";
 import MusicContainer from "./Components/Sidebar/Item/Music/MusicContainer";
+import ToDoListContainer from "./Components/Sidebar/Item/ToDoList/ToDoListContainer";
+
+
 
 
 class App extends React.Component {
@@ -45,6 +48,9 @@ class App extends React.Component {
                            render={() => <UsersContainer/>}/>
                     <Route path="/Music"
                            render={() => <MusicContainer />}/>
+                    <Route path="/ToDoList"
+                           render={() => <ToDoListContainer />}/>
+
                     <Route path="/Photo" component={Photo}/>
                     <Route path="/News" component={News}/>
                     <Route path="/Settings" component={Settings}/>

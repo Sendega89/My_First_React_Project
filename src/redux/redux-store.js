@@ -7,15 +7,18 @@ import authReducer from "./auth_Reducer";
 import thunkMeddleWare from "redux-thunk";
 import appReducer from "./app_Reducer";
 import music_Reducer from "./music_Reducer";
+import toDoList_Reducer from "./toDoList_Reducer";
 
 let reducers = combineReducers({
         profilePage: profile_Reducer,
         dialogsPage: dialogs_Reducer,
         musicPage:music_Reducer,
+        toDoList:toDoList_Reducer,
         sidebar: sidebar_Reducer,
         usersPage: users_Reducer,
         auth:authReducer,
         app:appReducer,
+
     }
 );
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
