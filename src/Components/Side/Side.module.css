@@ -1,0 +1,6 @@
+.side_wrapper {
+    grid-area:side;
+    width: 100%;
+    background-color: #96d0e0;
+
+}

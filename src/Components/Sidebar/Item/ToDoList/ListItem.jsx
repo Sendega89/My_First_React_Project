@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./ToDoList.module.scss"
+import NewCommentForm from "./NewCommentForm";
 
 
 
@@ -16,7 +17,8 @@ const ListItem = (props) => {
             {priority}
         </div>
         <div className={s.toDoListItems_item}>
-            {comment}
+
+            {comment}<NewCommentForm addCommentAC={props.addCommentAC} />
         </div>
     </div>
 

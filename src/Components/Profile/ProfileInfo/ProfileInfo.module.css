@@ -1,6 +1,7 @@
 .profile {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 20px;
 }
 
 .profile_avatar img {
@@ -40,4 +41,5 @@
 .profile_description_form_input {
     all:initial;
     appearance: auto;
+    box-shadow:none;
 }

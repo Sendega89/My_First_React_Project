@@ -4,6 +4,7 @@ import Preloader from "../../../common/Preloader/Preloader";
 import fishAvatar from "../../../assets/images/businessman-avatar-male-face-icon-600w-538980163.webp"
 import ProfileDataForm from "../ProfileDataForm/ProfileDataForm";
 
+
 function ProfileInfo(props) {
 
     let [editMode, setEditMode] = useState(false);
@@ -41,6 +42,7 @@ function ProfileInfo(props) {
                              goToEditMode={() => {
                                  setEditMode(true)
                              }}/>}
+
         </div>
 
     </div>

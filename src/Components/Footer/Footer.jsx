@@ -5,9 +5,8 @@ import logoImg from "../../assets/images/Free_Sample_By_Wix-removebg-preview.png
 
 const Footer = () => {
     return <footer className={style.footer}>
-        <div>
-            <img className={style.footer_logo}
-                 src={logoImg} alt="logo"/>
+        <div className={style.footer_logo}>
+            <img src={logoImg} alt="logo"/>
         </div>
         <div className={style.footer_description}>
             <p><a href={"https:it-kamasutra.com/"}>IT-Kamasutra</a></p>

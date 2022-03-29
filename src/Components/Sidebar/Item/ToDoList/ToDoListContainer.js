@@ -1,12 +1,14 @@
 import {connect} from "react-redux";
 import {compose} from "redux";
 import ToDoList from "./ToDoList";
-import {addTask} from "../../../../redux/toDoList_Reducer";
+import {addCommentAC, addTask} from "../../../../redux/toDoList_Reducer";
 
 const ToDoListContainer = (props)=> {
 
     return <div>
-        <ToDoList itemsTaskData={props.itemsTaskData} addTask={props.addTask} />
+        <ToDoList itemsTaskData={props.itemsTaskData}
+                  addTask={props.addTask}
+                  addCommentAC={props.addCommentAC} />
     </div>
 }
 let mapStateToProps = (state) => {
@@ -17,5 +19,5 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps,{addTask}),
+    connect(mapStateToProps,{addTask, addCommentAC}),
 )(ToDoListContainer);
