@@ -16,9 +16,9 @@ function ListItem(props) {
                <div>
 
                    <button id={n.id} onClick={()=>props.deleteTask(n.id)}>X</button>
-                   {n.id ===1 ? '':
+                   {n.id ===0 ? '':
                        <button id={n.id} onClick={()=>props.upTask(n.id)} >UP</button>}
-                   {n.id-1 === props.comments.length-1 ? '':
+                   {n.id === props.comments.length-1 ? '':
                        <button id={n.id} onClick={()=>props.downTask(n.id)}>Down</button>}
             </div>
             </div>

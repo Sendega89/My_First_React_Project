@@ -10,7 +10,7 @@ let initialState = {
 const toDoList_Reducer = (state = initialState, action) => {
 
     let newTask = {
-        id: state.comments.length + 1,
+        id: state.comments.length,
         name: action.name,
         priority:action.priority,
         isFirst:true,
@@ -39,9 +39,9 @@ const toDoList_Reducer = (state = initialState, action) => {
             };
         case UP_TASK:
 
-            let indexUP = state.comments.findIndex(i=> i.id===action.id);
-            let delUpEl = [...state.comments.splice(indexUP,1)];
-            state.comments.splice(indexUP-1,0, ...delUpEl)
+          /*  let indexUP = state.comments.findIndex(i=> i.id===action.id);*/
+            let delUpEl = [...state.comments.splice(action.id,1)];
+            state.comments.splice(action.id-1,0, ...delUpEl)
 
             return {
                 ...state,
@@ -50,9 +50,9 @@ const toDoList_Reducer = (state = initialState, action) => {
             };
         case DOWN_TASK:
 
-            let indexDOWN = state.comments.findIndex(i=> i.id===action.id);
-            let delDownEl = [...state.comments.splice(indexDOWN,1)];
-            state.comments.splice(indexDOWN+1,0, ...delDownEl)
+            /*let indexDOWN = state.comments.findIndex(i=> i.id===action.id);*/
+            let delDownEl = [...state.comments.splice(action.id,1)];
+            state.comments.splice(action.id+1,0, ...delDownEl)
             return {
                 ...state,
                 comments:[...state.comments],
