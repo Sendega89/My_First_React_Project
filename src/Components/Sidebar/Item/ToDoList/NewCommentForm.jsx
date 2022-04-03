@@ -1,11 +1,11 @@
 import React from "react";
 import {Field, Form, Formik} from "formik";
-
+import s from "./ToDoList.module.scss"
 
 
 const NewCommentForm = (props) => {
 
-    return  <>
+    return  <div>
         <Formik
             initialValues={{
                 commentText: '',
@@ -13,22 +13,22 @@ const NewCommentForm = (props) => {
             onSubmit={(values, {resetForm}) => {
                 if (values)
                 props.addCommentAC(values)
-                resetForm({values: ''});
+              resetForm({values: ''});
             }
             }>
             {({values}) => (
                 <Form>
-                    <div><Field
+                    <div><Field className={s.commentForm_wrapper}
                         type={"text"}
                         name={"commentText"}
                         placeholder={'Enter new comment'}
                         value={values.commentText}/>
                     </div>
-                        <button
+                        <button className={s.commentForm_wrapper}
                             type={`submit`}>Comment</button>
                 </Form>
             )}
         </Formik>
-    </>
+    </div>
 }
 export default NewCommentForm

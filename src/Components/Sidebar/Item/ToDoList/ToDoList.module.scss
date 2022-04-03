@@ -16,3 +16,13 @@ grid-template-columns: 100px 50px auto;
   appearance: auto;
   box-shadow:none;
 }
+.commentForm_wrapper {
+  all:initial;
+  appearance: auto;
+  box-shadow:none;
+  border: 1px solid grey;
+  margin: 5px;
+}
+.important {
+  color:red;
+}

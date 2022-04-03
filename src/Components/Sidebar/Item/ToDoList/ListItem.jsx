@@ -1,26 +1,32 @@
-import React from "react";
+import React  from "react";
 import s from "./ToDoList.module.scss"
 import NewCommentForm from "./NewCommentForm";
 
 
 
-const ListItem = (props) => {
+function ListItem(props) {
 
-    let taskElements = props.itemsTaskData.map(t => <div key={t.id}>{t.task}</div>);
-    let priority = props.itemsTaskData.map(p => <div key={p.id}>{p.priority ? <div>+</div> : <div>-</div>}</div>);
-    let comment = props.itemsTaskData.map(c => c.comment.map(ct => <div key={ct.id}>{ct.commentText}</div>))
-    return <div className={s.toDoListItems}>
-        <div className={s.toDoListItems_item}>
-            {taskElements}
-        </div>
-        <div className={s.toDoListItems_item}>
-            {priority}
-        </div>
-        <div className={s.toDoListItems_item}>
+    return (
+        props.comments.map(n => (
+            <div key={n.id}>
+                <h3>{n.name}</h3>
+                {n.priority && <div className={s.important}>VIP</div>}
+                {n.reply.map(el => <div key={n.id+1}>{el}</div>)}
+                <NewCommentForm addCommentAC={props.addCommentAC} />
+               <div>
 
-            {comment}<NewCommentForm addCommentAC={props.addCommentAC} />
-        </div>
-    </div>
+                   <button id={n.id} onClick={()=>props.deleteTask(n.id)}>X</button>
+                   {n.id ===1 ? '':
+                       <button id={n.id} onClick={()=>props.upTask(n.id)} >UP</button>}
+                   {n.id-1 === props.comments.length-1 ? '':
+                       <button id={n.id} onClick={()=>props.downTask(n.id)}>Down</button>}
+            </div>
+            </div>
+
+        )))
 
 }
+
+
 export default ListItem
+

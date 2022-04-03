@@ -5,6 +5,7 @@ import NewTaskForm from "./NewTaskForm";
 
 
 
+
 const ToDoList =(props) => {
 
 
@@ -12,7 +13,11 @@ const ToDoList =(props) => {
         <div className={s.toDoList_title}><h1>My personal to do list</h1></div>
         <NewTaskForm addTask={props.addTask}/>
         <div className={s.toDoList_items}>
-            <ListItem itemsTaskData={props.itemsTaskData} addCommentAC={props.addCommentAC}/>
+            <ListItem  comments={props.comments}
+                       addCommentAC={props.addCommentAC}
+                       deleteTask={props.deleteTask}
+                       downTask={props.downTask}
+                       upTask={props.upTask}/>
         </div>
 
 

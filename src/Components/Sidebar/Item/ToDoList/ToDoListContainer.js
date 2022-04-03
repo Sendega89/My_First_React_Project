@@ -1,23 +1,27 @@
 import {connect} from "react-redux";
 import {compose} from "redux";
 import ToDoList from "./ToDoList";
-import {addCommentAC, addTask} from "../../../../redux/toDoList_Reducer";
+import {addComment, addTask, deleteTask, downTask, upTask} from "../../../../redux/toDoList_Reducer";
 
 const ToDoListContainer = (props)=> {
 
     return <div>
-        <ToDoList itemsTaskData={props.itemsTaskData}
+        <ToDoList comments={props.comments}
                   addTask={props.addTask}
-                  addCommentAC={props.addCommentAC} />
+                  addCommentAC={props.addCommentAC}
+                  deleteTask={props.deleteTask}
+                  upTask={props.upTask}
+                  downTask={props.downTask}
+        />
     </div>
 }
 let mapStateToProps = (state) => {
 
     return {
-        itemsTaskData: state.toDoList.itemsTaskData
+        comments: state.toDoList.comments
     }
 }
 
 export default compose(
-    connect(mapStateToProps,{addTask, addCommentAC}),
+    connect(mapStateToProps,{addTask, addCommentAC: addComment,deleteTask,downTask,upTask}),
 )(ToDoListContainer);

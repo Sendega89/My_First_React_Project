@@ -19,7 +19,7 @@ const SearchForm = (props) => {
             {({values,status}) => (
                 <Form className={s.search_form}>
                     <div><Field className={s.search_form_input}
-                                type={"text"}
+                                type={"search"}
                                 name={"search"}
                                 placeholder={'search'}
                                 value={values.search}/>
