@@ -6,6 +6,7 @@ import NewTaskForm from "./NewTaskForm";
 
 
 
+
 const ToDoList =(props) => {
 
 
@@ -17,7 +18,8 @@ const ToDoList =(props) => {
                        addCommentAC={props.addCommentAC}
                        deleteTask={props.deleteTask}
                        downTask={props.downTask}
-                       upTask={props.upTask}/>
+                       upTask={props.upTask}
+                       deleteComment={props.deleteComment}/>
         </div>
 
 
