@@ -3,7 +3,7 @@ import {Field, Form, Formik} from "formik";
 import s from "./ToDoList.module.scss"
 
 
-const NewCommentForm = ({addCommentAC,id}) => {
+const NewCommentForm = ({addComment,id}) => {
 
     return  <div>
         <Formik
@@ -12,7 +12,7 @@ const NewCommentForm = ({addCommentAC,id}) => {
             }}
             onSubmit={(values, {resetForm}) => {
                 if (values)
-                addCommentAC(values,id)
+                addComment(values,id)
               resetForm({values: ''});
             }
             }>
@@ -21,7 +21,7 @@ const NewCommentForm = ({addCommentAC,id}) => {
                     <div><Field className={s.commentForm_wrapper}
                         type={"text"}
                         name={"commentText"}
-                        placeholder={'Enter new comment'}
+                        placeholder={'Enter comment'}
                         value={values.commentText}/>
                     </div>
                         <button className={s.commentForm_wrapper}

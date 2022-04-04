@@ -21,7 +21,9 @@ grid-template-columns: 100px 50px auto;
   appearance: auto;
   box-shadow:none;
   border: 1px solid grey;
+  border-radius: 10%;
   margin: 5px;
+  padding: 5px;
 }
 .important {
   color:red;
@@ -30,4 +32,8 @@ grid-template-columns: 100px 50px auto;
   margin-left: 10px;
   color: red;
   cursor:pointer;
+}
+.required {
+  color: red;
+
 }

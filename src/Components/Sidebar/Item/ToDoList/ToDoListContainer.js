@@ -8,21 +8,19 @@ const ToDoListContainer = (props)=> {
     return <div>
         <ToDoList comments={props.comments}
                   addTask={props.addTask}
-                  addCommentAC={props.addCommentAC}
+                  addComment={props.addComment}
                   deleteTask={props.deleteTask}
                   upTask={props.upTask}
                   downTask={props.downTask}
-                  deleteComment={props.deleteComment}
-        />
+                  deleteComment={props.deleteComment}/>
     </div>
 }
 let mapStateToProps = (state) => {
-
     return {
         comments: state.toDoList.comments
     }
 }
 
 export default compose(
-    connect(mapStateToProps,{addTask, addCommentAC: addComment,deleteTask,downTask,upTask,deleteComment}),
+    connect(mapStateToProps,{addTask,addComment,deleteTask,downTask,upTask,deleteComment}),
 )(ToDoListContainer);

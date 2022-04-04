@@ -39,7 +39,6 @@ const getIndexElement = (id) => {
             let indexComment = getIndexElement(action.taskId);
             let indexSubComment = state.comments[indexComment].reply.findIndex(i=> i===action.commentId)
             state.comments[indexComment].reply.splice(indexSubComment,1);
-
             return {
                 ...state,
                 comments: [...state.comments]
@@ -66,8 +65,6 @@ const getIndexElement = (id) => {
             return {
                 ...state,
                 comments:[...state.comments],
-
-
             }
         default :
             return state;

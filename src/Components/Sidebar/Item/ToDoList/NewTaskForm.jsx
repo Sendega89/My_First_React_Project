@@ -2,9 +2,7 @@ import React from "react";
 import {Field, Form, Formik} from "formik";
 import s from "./ToDoList.module.scss"
 
-
-const NewTaskForm = (props) => {
-
+const NewTaskForm = ({addTask}) => {
     return  <>
         <Formik
             initialValues={{
@@ -13,8 +11,7 @@ const NewTaskForm = (props) => {
             }}
             onSubmit={(values, {resetForm}) => {
                 if (values)
-
-                props.addTask(values)
+                addTask(values)
                 resetForm({values: ''});
             }
             }>
@@ -25,11 +22,10 @@ const NewTaskForm = (props) => {
                         name={"taskText"}
                         placeholder={'Enter new task'}
                         value={values.taskText}/>
-                        <Field type="checkbox" name='required'  className={s.checkboxStyle} />
-
+                        <Field type="checkbox" name='required' className={s.checkboxStyle}/>
+                        <span className={s.required} >required?</span>
                     </div>
-                        <button
-                            type={`submit`}>Add Task</button>
+                        <button type={`submit`}>Add Task</button>
                 </Form>
             )}
         </Formik>

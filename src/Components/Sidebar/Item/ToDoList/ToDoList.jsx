@@ -15,7 +15,7 @@ const ToDoList =(props) => {
         <NewTaskForm addTask={props.addTask}/>
         <div className={s.toDoList_items}>
             <ListItem  comments={props.comments}
-                       addCommentAC={props.addCommentAC}
+                       addCommentAC={props.addComment}
                        deleteTask={props.deleteTask}
                        downTask={props.downTask}
                        upTask={props.upTask}
