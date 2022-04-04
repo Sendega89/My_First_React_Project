@@ -13,8 +13,6 @@ const toDoList_Reducer = (state = initialState, action) => {
         id: state.comments.length,
         name: action.name,
         priority:action.priority,
-        isFirst:true,
-        isLast:false,
         reply: [],
     };
     switch (action.type) {
@@ -26,22 +24,20 @@ const toDoList_Reducer = (state = initialState, action) => {
 
             };
         case ADD_COMMENT:
-            console.log(action.comment)
-
             return {
                 ...state,
             };
         case DELETE_TASK:
-            console.log(action.id);
+
             return {
                 ...state,
                 comments: [...state.comments.filter((item)=>item.id !== action.id)]
             };
         case UP_TASK:
-
-          /*  let indexUP = state.comments.findIndex(i=> i.id===action.id);*/
-            let delUpEl = [...state.comments.splice(action.id,1)];
-            state.comments.splice(action.id-1,0, ...delUpEl)
+            console.log(state.comments.findIndex(i=> i.id===action.id))
+            let indexUP = state.comments.findIndex(i=> i.id===action.id);
+            let delUpEl = [...state.comments.splice(indexUP,1)];
+            state.comments.splice(indexUP-1,0, ...delUpEl)
 
             return {
                 ...state,
@@ -50,9 +46,9 @@ const toDoList_Reducer = (state = initialState, action) => {
             };
         case DOWN_TASK:
 
-            /*let indexDOWN = state.comments.findIndex(i=> i.id===action.id);*/
-            let delDownEl = [...state.comments.splice(action.id,1)];
-            state.comments.splice(action.id+1,0, ...delDownEl)
+            let indexDOWN = state.comments.findIndex(i=> i.id===action.id);
+            let delDownEl = [...state.comments.splice(indexDOWN,1)];
+            state.comments.splice(indexDOWN+1,0, ...delDownEl)
             return {
                 ...state,
                 comments:[...state.comments],
