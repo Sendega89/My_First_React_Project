@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/My_First_React_Project/static/css/main.8c32e551.css",
-    "main.js": "/My_First_React_Project/static/js/main.930b019f.js",
+    "main.css": "/My_First_React_Project/static/css/main.6ff86de2.css",
+    "main.js": "/My_First_React_Project/static/js/main.90c9cf4e.js",
     "static/js/787.3383ac8f.chunk.js": "/My_First_React_Project/static/js/787.3383ac8f.chunk.js",
     "static/media/Internet.gif": "/My_First_React_Project/static/media/Internet.36b15b5002bd67322407.gif",
     "static/media/Free_Sample_By_Wix-removebg-preview.png": "/My_First_React_Project/static/media/Free_Sample_By_Wix-removebg-preview.760860b6439e30c9d9ee.png",
     "static/media/businessman-avatar-male-face-icon-600w-538980163.webp": "/My_First_React_Project/static/media/businessman-avatar-male-face-icon-600w-538980163.ac85e993fd75efd95180.webp",
     "index.html": "/My_First_React_Project/index.html",
-    "main.8c32e551.css.map": "/My_First_React_Project/static/css/main.8c32e551.css.map",
-    "main.930b019f.js.map": "/My_First_React_Project/static/js/main.930b019f.js.map",
+    "main.6ff86de2.css.map": "/My_First_React_Project/static/css/main.6ff86de2.css.map",
+    "main.90c9cf4e.js.map": "/My_First_React_Project/static/js/main.90c9cf4e.js.map",
     "787.3383ac8f.chunk.js.map": "/My_First_React_Project/static/js/787.3383ac8f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c32e551.css",
-    "static/js/main.930b019f.js"
+    "static/css/main.6ff86de2.css",
+    "static/js/main.90c9cf4e.js"
   ]
 }
