@@ -7,9 +7,9 @@ function ListItem(props) {
 
     return (
         props.comments.map(n => (
-            <ul key={n.id}>
-                <h3>{n.name}</h3>
-                {n.priority && <div className={s.important}>VIP</div>}
+            <ul key={n.id} className={s.changeOddEl}>
+                <h3 className={n.priority && s.important} >{n.name}</h3>
+                {n.priority && <div className={s.important}>important</div>}
                  <Reply item={n.reply}
                         deleteComment={props.deleteComment}
                         taskId={n.id}/>
@@ -27,7 +27,7 @@ return (
       item.map((n) => {
           let commentId = Math.floor(Math.random()*10000000)
           return (
-        <li key={commentId}>
+        <li key={commentId} className={s.comments_Task}>
             {n ? n : null}
             <span className={s.del_button} onClick={()=>deleteComment(taskId,n)}>x</span>
         </li>

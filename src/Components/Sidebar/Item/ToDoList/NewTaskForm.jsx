@@ -23,7 +23,7 @@ const NewTaskForm = ({addTask}) => {
                         placeholder={'Enter new task'}
                         value={values.taskText}/>
                         <Field type="checkbox" name='required' className={s.checkboxStyle}/>
-                        <span className={s.required} >required?</span>
+                        <span className={s.required}>important?</span>
                     </div>
                         <button type={`submit`}>Add Task</button>
                 </Form>

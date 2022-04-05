@@ -36,7 +36,7 @@ const LoginForm = ({login, captchaUrl}) => {
                                 placeholder={'Password'}
                                 value={values.password}/></div>
 
-                    <div><Field className={s.login_form_input} type={`checkbox`}
+                    <div><Field className={s.login_form_input_checkbox} type={`checkbox`}
                                 name={`rememberMe`}/> remember me?
                     </div>
 

@@ -34,6 +34,22 @@ grid-template-columns: 100px 50px auto;
   cursor:pointer;
 }
 .required {
-  color: red;
+  position: relative;
+  top: 10px;
 
+}
+.changeOddEl{
+  border-radius: 20%;
+  padding: 15px;
+
+}
+.changeOddEl:nth-child(odd) {
+  background-color: #c3def1;
+}
+.comments_Task:nth-child(odd) {
+  background-color:#9fe1e1;
+
+}
+.comments_Task {
+  list-style-type: none;
 }
